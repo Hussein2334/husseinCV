@@ -1,0 +1,3984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hussein Ali Abdulrahman - Professional CV</title>
+    <link rel="icon" type="image/jpeg" href="/images/me1.jpg">
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2F3C9E;
+            --primary-dark: #1E2A78;
+            --primary-light: #5F76E8;
+            --secondary: #2c3e50;
+            --accent: #FF7A45;
+            --accent-light: #FF9D78;
+            --light: #f8f9ff;
+            --dark: #1a1a2e;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --card-bg: #ffffff;
+            --header-bg: linear-gradient(135deg, #2F3C9E 0%, #5F76E8 100%);
+            --shadow: 0 10px 30px rgba(47, 60, 158, 0.1);
+            --toggle-bg: #e0e0e0;
+            --toggle-circle: white;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --nav-bg: rgba(255, 255, 255, 0.97);
+            --nav-text: #333;
+            --nav-shadow: 0 2px 20px rgba(47, 60, 158, 0.15);
+        }
+
+        .dark-mode {
+            --primary: #5F76E8;
+            --primary-dark: #2F3C9E;
+            --primary-light: #8BA1FF;
+            --secondary: #ecf0f1;
+            --accent: #FF7A45;
+            --light: #1e2a78;
+            --dark: #ecf0f1;
+            --text: #ecf0f1;
+            --text-light: #bdc3c7;
+            --bg: #121212;
+            --card-bg: #1e1e2e;
+            --header-bg: linear-gradient(135deg, #1E2A78 0%, #2F3C9E 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.3);
+            --toggle-bg: var(--primary);
+            --toggle-circle: #1e1e2e;
+            --nav-bg: rgba(30, 30, 46, 0.97);
+            --nav-text: #ecf0f1;
+            --nav-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.5s, color 0.3s, transform 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 122px;
+            cursor: default;
+        }
+
+        html {
+            scroll-padding-top: 132px;
+        }
+
+        body[dir="rtl"] {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Celebration Effects */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            opacity: 0;
+            animation: confetti-fall 5s linear forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% { 
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: firework-explode 1.5s ease-out forwards;
+        }
+
+        @keyframes firework-explode {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(50vh) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .celebration-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 10000;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: message-popup 2s ease-in-out forwards;
+        }
+
+        .celebration-message.arabic {
+            background: linear-gradient(135deg, #006233, #CE1126);
+            font-size: 2.2rem;
+            font-family: 'Traditional Arabic', 'Scheherazade', serif;
+        }
+
+        @keyframes message-popup {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .tanzania-flag-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                #1B5E20 0%,
+                #1B5E20 33%,
+                #FFD600 33%,
+                #FFD600 66%,
+                #000000 66%,
+                #000000 100%
+            );
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            animation: flag-wave 3s ease-in-out forwards;
+        }
+
+        .saudi-flag-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #006233;
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            animation: flag-wave 3s ease-in-out forwards;
+        }
+
+        .saudi-flag-effect::before {
+            content: "الله أكبر";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: 'Traditional Arabic', 'Scheherazade', serif;
+            opacity: 0.7;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes flag-wave {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+
+        .touch-effect {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            pointer-events: none;
+            z-index: 9999;
+            animation: touch-bubble 0.5s ease-out forwards;
+        }
+
+        @keyframes touch-bubble {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .celebrate-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .celebrate-button:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .celebrate-button:active {
+            transform: scale(0.95);
+        }
+
+        .celebrate-button.arabic-mode {
+            background: linear-gradient(135deg, #006233, #CE1126);
+        }
+        
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--nav-shadow);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            flex: 0 0 auto;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+        
+        .nav-links {
+            display: flex;
+            order: 3;
+            flex: 0 0 100%;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2px 8px;
+            padding-top: 7px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--nav-text);
+            font-weight: 500;
+            padding: 6px 9px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+        
+        .nav-controls {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Mode Toggle Button */
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--light);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .mode-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .mode-toggle i {
+            font-size: 1.1rem;
+        }
+
+        .dark-mode .mode-toggle {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            width: 25px;
+            height: 20px;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: var(--nav-text);
+            transition: all 0.3s;
+            transform-origin: center;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        header {
+            background: var(--header-bg);
+            color: white;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-top: -70px;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            animation: wave 20s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-30px); }
+            100% { transform: translateX(0); }
+        }
+        
+        .profile-container {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #2F3C9E 0%, #5F76E8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: float 6s ease-in-out infinite;
+            cursor: pointer;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .title {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .about-text:hover {
+            transform: translateY(-10px);
+        }
+        
+        .personal-info {
+            margin-top: 25px;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .info-label {
+            font-weight: 600;
+            min-width: 150px;
+            color: var(--primary);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .skill {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(47, 60, 158, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-with-certificate {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .skills-container .skill-certificate-button {
+            margin: 7px 0 0 8px;
+            padding: 5px 11px;
+            font-size: 0.75rem;
+        }
+        
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(47, 60, 158, 0.4);
+        }
+        
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 40px;
+            text-align: right;
+        }
+        
+        .timeline-date {
+            min-width: 150px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(47, 60, 158, 0.4);
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--card-bg);
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -10px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -10px;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .timeline-content .company {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(47, 60, 158, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-img i {
+            font-size: 70px;
+            color: rgba(255,255,255,0.9);
+            z-index: 2;
+        }
+        
+        .project-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .project-info {
+            padding: 25px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+        
+        .project-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .hobby-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            min-width: 150px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+            cursor: pointer;
+        }
+        
+        .hobby-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(47, 60, 158, 0.15);
+        }
+        
+        .hobby-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .referee-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .referee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(47, 60, 158, 0.15);
+        }
+        
+        .certification-box {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        /* ===== Certificates Gallery ===== */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-section-description {
+            max-width: 700px;
+            margin: -35px auto 10px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .photo-gallery-card {
+            overflow: hidden;
+            border: 1px solid rgba(127, 145, 190, 0.18);
+            border-radius: 16px;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(20, 35, 75, 0.18);
+        }
+
+        .photo-gallery-card a {
+            display: block;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            background: var(--light);
+        }
+
+        .photo-gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s;
+        }
+
+        .photo-gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-gallery-caption {
+            padding: 17px 19px 19px;
+        }
+
+        .photo-gallery-caption h3 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .photo-gallery-caption p {
+            margin: 7px 0 0;
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .certificate-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.35s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+            cursor: pointer;
+            text-align: center;
+            padding: 30px 20px;
+            border: 2px solid transparent;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(47, 60, 158, 0.18);
+            border-color: var(--primary-light);
+        }
+
+        .certificate-card .cert-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .certificate-card .cert-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .certificate-card h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .certificate-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .certificate-card .cert-view-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* ===== Achievements Grid (with descriptions) ===== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.35s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+            padding: 28px 24px;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(47, 60, 158, 0.15);
+        }
+
+        .achievement-card .cert-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .achievement-card .cert-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .achievement-card h4 {
+            color: var(--primary);
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .achievement-card .achievement-org {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .achievement-card p.achievement-desc {
+            color: var(--text);
+            font-size: 0.92rem;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        /* Small "View Certificate" link used inside timeline / training cards */
+        .view-cert-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--primary);
+            color: #fff !important;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .view-cert-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Certificate Modal ===== */
+        .cert-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 12, 30, 0.88);
+            z-index: 10500;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+
+        .cert-modal-overlay.show {
+            display: flex;
+        }
+
+        .cert-modal-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            max-width: 850px;
+            width: 100%;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+
+        .cert-modal-header {
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--header-bg);
+            color: white;
+        }
+
+        .cert-modal-header h3 {
+            font-size: 1.15rem;
+            margin: 0;
+        }
+
+        .cert-modal-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .cert-modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .cert-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: var(--light);
+        }
+
+        .cert-modal-body img {
+            max-width: 100%;
+            max-height: 65vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #fff;
+        }
+
+        .cert-modal-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cert-modal-tab {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .cert-modal-tab.active,
+        .cert-modal-tab:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cert-modal-footer {
+            padding: 14px 25px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 480px) {
+            .cert-modal-body img { max-height: 50vh; }
+            .certificate-card { padding: 22px 14px; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Language Switcher */
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-button {
+            background: transparent;
+            border: 1px solid var(--light);
+            color: var(--nav-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .language-button:hover {
+            background: var(--light);
+        }
+
+        .language-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--card-bg);
+            min-width: 160px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .language-options.show {
+            display: block;
+        }
+
+        .language-option {
+            padding: 12px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            color: var(--text);
+        }
+
+        .language-option:hover {
+            background: var(--light);
+        }
+
+        .language-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* RTL Support */
+        body[dir="rtl"] .info-item {
+            flex-direction: row-reverse;
+        }
+
+        body[dir="rtl"] .info-label {
+            text-align: right;
+        }
+
+        body[dir="rtl"] .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        body[dir="rtl"] .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        body[dir="rtl"] .timeline-content::before {
+            right: -10px;
+            left: auto;
+        }
+
+        body[dir="rtl"] .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -10px;
+            right: auto;
+        }
+
+        body[dir="rtl"] .contact-item-detail {
+            flex-direction: row-reverse;
+        }
+
+        body[dir="rtl"] .contact-item-detail i {
+            margin-right: 0;
+            margin-left: 20px;
+        }
+
+        body[dir="rtl"] .sql-highlight h3 i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        body[dir="rtl"] .logo {
+            flex-direction: row-reverse;
+        }
+
+        body[dir="rtl"] .contact-item {
+            flex-direction: row-reverse;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        body[dir="rtl"] .footer-section h3::after {
+            left: auto;
+            right: 0;
+        }
+
+        .footer-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        body[dir="rtl"] .footer-links a {
+            flex-direction: row-reverse;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            transform: translateX(5px);
+            color: var(--accent-light);
+        }
+
+        body[dir="rtl"] .footer-links a:hover {
+            transform: translateX(-5px);
+        }
+
+        .footer-links a i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 769px) and (max-width: 1100px) {
+            body {
+                padding-top: 155px;
+            }
+
+            html {
+                scroll-padding-top: 165px;
+            }
+        }
+
+        /* MOBILE RESPONSIVE FIXES */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            html {
+                scroll-padding-top: 68px;
+            }
+            
+            header {
+                padding: 100px 0 80px;
+                margin-top: -60px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-item {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 50px;
+            }
+            
+            /* Navigation for Mobile - FIXED */
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                order: initial;
+                flex: initial;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--nav-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 0;
+                gap: 20px;
+                box-shadow: var(--nav-shadow);
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .nav-links a {
+                width: 80%;
+                text-align: center;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 1.2rem;
+                background: var(--light);
+            }
+            
+            .nav-links a::after {
+                display: none;
+            }
+            
+            .nav-controls {
+                gap: 10px;
+            }
+            
+            .language-button, .mode-toggle {
+                transform: scale(0.9);
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .mode-toggle span {
+                display: none;
+            }
+            
+            /* FIXED TIMELINE FOR MOBILE */
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                margin-left: 0;
+                margin-bottom: 40px;
+            }
+            
+            .timeline-date {
+                min-width: 100px;
+                position: relative;
+                left: 0;
+                top: 0;
+                margin-bottom: 15px;
+                align-self: flex-start;
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+            
+            .timeline-content {
+                margin-left: 0 !important;
+                text-align: left !important;
+                padding: 20px;
+            }
+            
+            .timeline-content::before {
+                left: -10px !important;
+                right: auto !important;
+            }
+            
+            /* Stack timeline items vertically on mobile */
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .about-text, .referee-card {
+                padding: 25px;
+            }
+            
+            .sql-highlight {
+                padding: 30px 20px;
+            }
+            
+            .certification-box {
+                padding: 30px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .celebrate-button {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .language-options {
+                right: 0;
+                left: auto;
+            }
+
+            body[dir="rtl"] .language-options {
+                right: auto;
+                left: 0;
+            }
+
+            .saudi-flag-effect::before {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .title {
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                gap: 10px;
+            }
+            
+            .contact-item {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-date {
+                min-width: 80px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .language-button, .mode-toggle {
+                transform: scale(0.8);
+            }
+
+            .saudi-flag-effect::before {
+                font-size: 2rem;
+            }
+        }
+
+        .sql-highlight {
+            background: linear-gradient(135deg, #2F3C9E 0%, #5F76E8 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .sql-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 8s infinite linear;
+        }
+        
+        .sql-highlight h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: inherit;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .sql-highlight h3 i {
+            margin-right: 10px;
+        }
+        
+        body[dir="rtl"] .sql-highlight h3 i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        .sql-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sql-highlight .training-provider {
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 600;
+        }
+        
+        .sql-skill {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            color: #2F3C9E;
+        }
+        
+        .sql-skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .dark-mode .sql-skill {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Celebration Elements -->
+    <div class="celebration" id="celebration"></div>
+    
+    <!-- Tanzania Flag Effect -->
+    <div class="tanzania-flag-effect" id="tanzania-flag-effect"></div>
+    
+    <!-- Saudi Arabia Flag Effect -->
+    <div class="saudi-flag-effect" id="saudi-flag-effect"></div>
+    
+    <!-- Celebration Button -->
+    <button class="celebrate-button" id="celebrate-button">
+        <i class="fas fa-fireworks"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-user-tie"></i>
+                <span>Hussein Ali</span>
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" data-i18n="navAbout">About</a></li>
+                <li><a href="#education" data-i18n="navEducation">Education</a></li>
+                <li><a href="#experience" data-i18n="navExperience">Experience</a></li>
+                <li><a href="#sql-training" data-i18n="navTraining">Training</a></li>
+                <li><a href="#hobbies" data-i18n="navHobbies">Hobbies</a></li>
+                <li><a href="#achievements" data-i18n="navAchievements">Achievements</a></li>
+                <li><a href="#referees" data-i18n="navReferees">Referees</a></li>
+                <li id="photo-nav-link"><a href="#photo-gallery" data-i18n="navPhotos">Photos</a></li>
+                <li><a href="#certificates-gallery" data-i18n="navCertificates">Certificates</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <div class="language-dropdown">
+                    <button class="language-button" id="language-button">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-language">English</span>
+                    </button>
+                    <div class="language-options" id="language-options">
+                        <div class="language-option" data-lang="en">
+                            <i class="fas fa-language"></i>
+                            English
+                        </div>
+                        <div class="language-option" data-lang="sw">
+                            <i class="fas fa-language"></i>
+                            Kiswahili
+                        </div>
+                        <div class="language-option" data-lang="ar">
+                            <i class="fas fa-language"></i>
+                            العربية
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mode-toggle" id="mode-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span id="mode-text">Dark Mode</span>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-img" id="profile-img">
+                    <img id="profile-picture" src="images/me1.jpg" alt="Hussein Ali Abdulrahman" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%232F3C9E%22/><text x=%22100%22 y=%22110%22 font-family=%22Arial%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22white%22>HA</text></svg>'">
+                </div>
+                <h1 data-i18n="name">HUSSEIN ALI ABDULRAHMAN</h1>
+                <div class="title" data-i18n="title">Business Information Technology Specialist</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>husseinali2334@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+255658216348</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="location">Mombasa - Zanzibar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="personalDetails">Personal Particulars</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="objective">Seeking employment opportunity in Business Information Technology where I can utilize my technical skills, education, and passion for technology to contribute to organizational success.</p>
+                    
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="firstName">First Name:</div>
+                            <div class="info-value">HUSSEIN</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="middleName">Middle Name:</div>
+                            <div class="info-value">ALI</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="sirName">Sir Name:</div>
+                            <div class="info-value">ABDULRAHMAN</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="dob">Date of Birth:</div>
+                            <div class="info-value">September 22, 2001</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="pob">Place of Birth:</div>
+                            <div class="info-value">Mombasa, Mjini Magharibi Unguja</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="domicile">Domicile:</div>
+                            <div class="info-value">Zanzibar</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="gender">Gender:</div>
+                            <div class="info-value" data-i18n="male">Male</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label" data-i18n="maritalStatus">Marital Status:</div>
+                            <div class="info-value" data-i18n="single">Single</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary);" data-i18n="technicalSkills">Technical Skills</h3>
+                    <div class="skills-container stagger-animation">
+                        <div class="skill" data-i18n="pcMaintenance">PC Maintenance</div>
+                        <div class="skill" data-i18n="windowsInstallation">Windows Installation</div>
+                        <div class="skill" data-i18n="networkTroubleshooting">Network Troubleshooting</div>
+                        <div class="skill" data-i18n="databaseManagement">Database Management</div>
+                        <div class="skill" data-i18n="networking">Networking</div>
+                        <div class="skill" data-i18n="printerInstallation">Printer Installation</div>
+                        <div class="skill" data-i18n="websiteDevelopment">Website Development</div>
+                        <div class="skill" data-i18n="desktopSupport">Desktop Support</div>
+                        <div class="skill" data-i18n="systemAnalysis">System Analysis & Design</div>
+                        <div class="skill" data-i18n="mobileDevelopment">Mobile Development</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title" data-i18n="education">Education Qualification</h2>
+            <div class="timeline">
+                <div class="timeline-item" style="animation-delay: 0.1s">
+                    <div class="timeline-date" style="background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);"><span data-i18n="ongoing">2023 - 2026 (Ongoing)</span></div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bachelorIT">Bachelor of Information Technology</h3>
+                        <div class="company">Institute of Accountancy Arusha (IAA)</div>
+                        <p data-i18n="bachelorDesc">Currently pursuing a Bachelor's degree in Information Technology (NTA Level 8), building on my Diploma with advanced coursework in IT project management, network administration, information security, data mining, and open-source software deployment. Current Cumulative GPA (CGPA): 3.53.</p>
+                        <button class="view-cert-btn" onclick="openCertModal('bachelor')"><i class="fas fa-certificate"></i> <span data-i18n="viewResults">View Current Results</span></button>
+                    </div>
+                </div>
+                <div class="timeline-item" style="animation-delay: 0.2s">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="diplomaBIT">Diploma in Business Information Technology</h3>
+                        <div class="company">Zanzibar University (ZU)</div>
+                        <p data-i18n="diplomaDesc">Comprehensive study of business information systems, database management, networking, and software development.</p>
+                        <button class="view-cert-btn" onclick="openCertModal('diploma')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                    </div>
+                </div>
+                <div class="timeline-item" style="animation-delay: 0.4s">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="certificateBIT">Certificate in Business Information Technology</h3>
+                        <div class="company">Zanzibar University (ZU)</div>
+                        <p data-i18n="certificateDesc">Fundamental knowledge in IT concepts, computer systems, and basic programming principles.</p>
+                        <button class="view-cert-btn" onclick="openCertModal('certificate')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                    </div>
+                </div>
+                <div class="timeline-item" style="animation-delay: 0.6s">
+                    <div class="timeline-date">2016 - 2019</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="secondaryCert">Certificate of Secondary Education</h3>
+                        <div class="company">Alfallah Secondary School</div>
+                        <p data-i18n="secondaryDesc">Completed secondary education with focus on sciences and mathematics.</p>
+                        <button class="view-cert-btn" onclick="openCertModal('secondary')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title" data-i18n="experience">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" style="animation-delay: 0.2s">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="pbzTraining">Field Training - Business Information Technology</h3>
+                        <div class="company">People's Bank of Zanzibar (PBZ) - Malindi</div>
+                        <p data-i18n="pbzDesc">One month of intensive field training focusing on practical IT skills in a banking environment.</p>
+                        <div class="skills-container" style="margin-top: 15px;">
+                            <div class="skill" data-i18n="pcMaintenance">PC Maintenance</div>
+                            <div class="skill" data-i18n="windowsDriverInstallation">Windows & Driver Installation</div>
+                            <div class="skill" data-i18n="networkTroubleshooting">Network Troubleshooting</div>
+                            <div class="skill" data-i18n="databaseManagement">Database Management</div>
+                            <div class="skill" data-i18n="networking">Networking</div>
+                            <div class="skill" data-i18n="printerInstallation">Printer Installation</div>
+                            <div class="skill" data-i18n="websiteDevelopment">Website Development</div>
+                            <div class="skill" data-i18n="desktopSupport">Desktop Support</div>
+                        </div>
+                        <button class="view-cert-btn" onclick="openCertModal('pbz')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                    </div>
+                </div>
+                <div class="timeline-item" style="animation-delay: 0.4s">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="egazTraining">Field Training - Business Information Technology</h3>
+                        <div class="company">Mamlaka ya Serikali Mtandao Zanzibar (EGAz) - Mazizini</div>
+                        <p data-i18n="egazDesc">Two months of comprehensive field training focusing on software development and system administration.</p>
+                        <div class="skills-container" style="margin-top: 15px;">
+                            <div class="skill" data-i18n="backendDev">Back-end Software Development</div>
+                            <div class="skill" data-i18n="frontendDev">Front-end Software Development</div>
+                            <div class="skill" data-i18n="databaseManagement">Database Management</div>
+                            <div class="skill" data-i18n="networkingTroubleshooting">Networking & Troubleshooting</div>
+                            <div class="skill" data-i18n="serverManagement">Windows Server Installation & Management</div>
+                            <div class="skill" data-i18n="systemAnalysis">System Analysis & Design (SRS & SDD)</div>
+                            <div class="skill" data-i18n="mobileDevelopment">Mobile Development</div>
+                        </div>
+                        <button class="view-cert-btn" onclick="openCertModal('egaz')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SQL Training Highlight -->
+    <section id="sql-training" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title" data-i18n="professionalTraining">Professional Training</h2>
+            <div class="sql-highlight" id="sql-highlight" style="animation-delay: 0.3s">
+                <h3><i class="fas fa-database"></i> <span data-i18n="sqlCertification">SQL & SQL Server Certification</span></h3>
+                <p style="text-align: center; margin-bottom: 25px; font-size: 1.1rem;" data-i18n="sqlDesc">Completed comprehensive training program on SQL and SQL Server through Udemy, covering essential database management skills.</p>
+                <div class="sql-skills stagger-animation">
+                    <div class="sql-skill" data-i18n="sqlBasics">SQL Basics</div>
+                    <div class="sql-skill" data-i18n="advancedSQL">Advanced SQL Queries</div>
+                    <div class="sql-skill" data-i18n="databaseDesign">Database Design</div>
+                    <div class="sql-skill" data-i18n="sqlServerAdmin">SQL Server Administration</div>
+                    <div class="sql-skill" data-i18n="storedProcedures">Stored Procedures & Functions</div>
+                    <div class="sql-skill" data-i18n="performanceTuning">Performance Tuning</div>
+                    <div class="sql-skill" data-i18n="dataSecurity">Data Security</div>
+                </div>
+                <div style="text-align: center; margin-top: 25px;">
+                    <button class="view-cert-btn" onclick="openCertModal('sql')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <div class="container">
+            <h2 class="section-title" data-i18n="hobbies">Hobbies & Ambitions</h2>
+            <div class="hobbies-container stagger-animation">
+                <div class="hobby-item">
+                    <i class="fas fa-swimmer"></i>
+                    <h4 data-i18n="swimming">Swimming</h4>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-futbol"></i>
+                    <h4 data-i18n="football">Football</h4>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-book-reader"></i>
+                    <h4 data-i18n="reading">Reading</h4>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-users"></i>
+                    <h4 data-i18n="teamwork">Team Work</h4>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4 data-i18n="counselling">Counselling</h4>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4 data-i18n="cooperative">Cooperative</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Recognition Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title" data-i18n="achievements">Achievements & Recognition</h2>
+            <p style="text-align: center; max-width: 750px; margin: 0 auto 10px; color: var(--text-light);" data-i18n="achievementsDesc">Beyond my core studies, I have taken part in extra training and leadership activities that have shaped my personal and professional growth.</p>
+            <div class="achievements-grid stagger-animation">
+                <div class="achievement-card">
+                    <div class="cert-icon"><i class="fas fa-globe"></i></div>
+                    <h4 data-i18n="unescoTitle">UNESCO Certificate of Completion</h4>
+                    <div class="achievement-org">UNESCO Dar es Salaam Office &amp; Institute of Accountancy Arusha (IAA)</div>
+                    <p class="achievement-desc" data-i18n="unescoDesc">Successfully completed a one-year online course on Sexuality Education, HIV &amp; AIDS, Gender-Based Violence, Relationships, and Resource Management, offered in collaboration with the UNESCO Dar es Salaam Office (April 2025).</p>
+                    <button class="view-cert-btn" onclick="openCertModal('unesco')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                </div>
+                <div class="achievement-card">
+                    <div class="cert-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <h4 data-i18n="traTitle">TRA Certificate of Awards</h4>
+                    <div class="achievement-org">Tanzania Revenue Authority (TRA)</div>
+                    <p class="achievement-desc" data-i18n="traDesc">Recognized by the Tanzania Revenue Authority for active participation as a Member of the IAA Tax Association, Arusha Region (2026), reflecting my growing interest in taxation and public financial systems.</p>
+                    <button class="view-cert-btn" onclick="openCertModal('tra')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                </div>
+                <div class="achievement-card">
+                    <div class="cert-icon"><i class="fas fa-people-group"></i></div>
+                    <h4 data-i18n="isrcTitle">Certificate of Recognition - ISRC</h4>
+                    <div class="achievement-org">Institute of Accountancy Arusha Students Organisation (IAASO)</div>
+                    <p class="achievement-desc" data-i18n="isrcDesc">Recognized for participation in the 2025/2026 IAA Students Organisation as an ISRC member representing BIT 3, in appreciation of my commitment, leadership skills, ethical conduct, and hardworking spirit.</p>
+                    <button class="view-cert-btn" onclick="openCertModal('isrc')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                </div>
+                <div class="achievement-card">
+                    <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4 data-i18n="zanusoTitle">Class Representative Certificate</h4>
+                    <div class="achievement-org">Zanzibar University Students Organisation (ZANUSO)</div>
+                    <p class="achievement-desc" data-i18n="zanusoDesc">Served as Class Representative for the 2022/2023 academic year at Zanzibar University, officially recognized by the Zanzibar University Students Organisation for leadership and dedication to fellow students.</p>
+                    <button class="view-cert-btn" onclick="openCertModal('zanuso')"><i class="fas fa-certificate"></i> <span data-i18n="viewCertificate">View Certificate</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referees Section -->
+    <section id="referees" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title" data-i18n="referees">Referees</h2>
+            <div class="projects-grid stagger-animation">
+                <div class="referee-card">
+                    <h3>MR. ALI ABDULRAHMAN ABDULLA</h3>
+                    <p class="company" data-i18n="seniorInstructor">Senior Instructor</p>
+                    <p>Karume Institute of Science and Technology</p>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-phone"></i>
+                        <div>+255 778395610</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-envelope"></i>
+                        <div>ali.abdullah@live.com</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>P.O.BOX 1092, Zanzibar-Tanzania</div>
+                    </div>
+                </div>
+                <div class="referee-card">
+                    <h3>MRS ZUHURA IDDI OMAR</h3>
+                    <p class="company" data-i18n="teacher">Teacher</p>
+                    <p data-i18n="ministryEducation">Ministry of Education and Vocational Training</p>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-phone"></i>
+                        <div>+255 777 418200</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-envelope"></i>
+                        <div>zuhuraiddiomar@gmail.com</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>P.O.BOX 1092, Zanzibar-Tanzania</div>
+                    </div>
+                </div>
+                <div class="referee-card">
+                    <h3>MR. HILAL SAID AMOUR</h3>
+                    <p class="company" data-i18n="managerDigital">Manager Digital Banking & Innovation</p>
+                    <p>The People's Bank of Zanzibar</p>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-phone"></i>
+                        <div>+255657132387</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-envelope"></i>
+                        <div>Hilal.Amour@pbzbank.co.tz</div>
+                    </div>
+                    <div class="contact-item-detail" style="padding: 0; margin: 15px 0; box-shadow: none;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>P ZIC building, 2nd floor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="photo-gallery" hidden>
+        <div class="container">
+            <h2 class="section-title" data-i18n="navPhotos">Photos</h2>
+            <p class="gallery-section-description" data-i18n="photosDescription">A few moments and highlights.</p>
+            <div class="photo-gallery-grid"></div>
+        </div>
+    </section>
+
+    <!-- Certificates Gallery Section -->
+    <section id="certificates-gallery">
+        <div class="container">
+            <h2 class="section-title" data-i18n="certificatesSectionTitle">Certificates &amp; Documents</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 10px; color: var(--text-light);" data-i18n="certificatesSectionDesc">Click on any certificate below to view the original scanned document.</p>
+            <div class="certificates-grid stagger-animation">
+                <div class="certificate-card" onclick="openCertModal('bachelor')">
+                    <div class="cert-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4 data-i18n="bachelorIT">Bachelor of Information Technology</h4>
+                    <p>Institute of Accountancy Arusha (IAA) - <span data-i18n="ongoingShort">Ongoing</span></p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('diploma')">
+                    <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4 data-i18n="diplomaBIT">Diploma in Business Information Technology</h4>
+                    <p>Zanzibar University</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('certificate')">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <h4 data-i18n="certificateBIT">Certificate in Business Information Technology</h4>
+                    <p>Zanzibar University</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('secondary')">
+                    <div class="cert-icon"><i class="fas fa-school"></i></div>
+                    <h4 data-i18n="secondaryCert">Certificate of Secondary Education</h4>
+                    <p>Al-Falaah Muslim Secondary School</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('pbz')">
+                    <div class="cert-icon"><i class="fas fa-university"></i></div>
+                    <h4 data-i18n="pbzCertTitle">Certificate of Participation</h4>
+                    <p>People's Bank of Zanzibar (PBZ)</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('egaz')">
+                    <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4 data-i18n="egazCertTitle">Certificate of Completion</h4>
+                    <p>Zanzibar e-Government Agency (eGAZ)</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('sql')">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <h4 data-i18n="sqlCertification">SQL & SQL Server Certification</h4>
+                    <p>Udemy</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('burpsuite')">
+                    <div class="cert-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h4 data-i18n="burpCertTitle">Burp Suite: Hands-On Testing</h4>
+                    <p>Udemy</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('unesco')">
+                    <div class="cert-icon"><i class="fas fa-globe"></i></div>
+                    <h4 data-i18n="unescoTitle">UNESCO Certificate of Completion</h4>
+                    <p>UNESCO Dar es Salaam Office</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('tra')">
+                    <div class="cert-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <h4 data-i18n="traTitle">TRA Certificate of Awards</h4>
+                    <p>Tanzania Revenue Authority</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('isrc')">
+                    <div class="cert-icon"><i class="fas fa-people-group"></i></div>
+                    <h4 data-i18n="isrcTitle">Certificate of Recognition - ISRC</h4>
+                    <p>Institute of Accountancy Arusha (IAA)</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+                <div class="certificate-card" onclick="openCertModal('zanuso')">
+                    <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4 data-i18n="zanusoTitle">Class Representative Certificate</h4>
+                    <p>Zanzibar University (ZANUSO)</p>
+                    <span class="cert-view-hint"><i class="fas fa-eye"></i> <span data-i18n="clickToView">Click to view</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section id="certification">
+        <div class="container">
+            <div class="certification-box">
+                <h3 style="margin-bottom: 20px; color: var(--primary);" data-i18n="certification">Certification</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;" data-i18n="certificationText">I, the undersigned, hereby certify that to the best of my knowledge believe, these curriculum vitae correctly describe me well, my qualifications and my experience at large.</p>
+                <p style="font-weight: bold; margin-top: 30px; font-size: 1.2rem;">HUSSEIN ALI ABDULRAHMAN</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Viewer Modal -->
+    <div class="cert-modal-overlay" id="cert-modal-overlay" onclick="if(event.target===this) closeCertModal()">
+        <div class="cert-modal-box">
+            <div class="cert-modal-header">
+                <h3 id="cert-modal-title">Certificate</h3>
+                <button class="cert-modal-close" onclick="closeCertModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cert-modal-body">
+                <div class="cert-modal-tabs" id="cert-modal-tabs"></div>
+                <img id="cert-modal-image" src="" alt="Certificate">
+            </div>
+            <div class="cert-modal-footer" data-i18n="certModalFooter">Original document provided by the issuing institution.</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="name">Hussein Ali Abdulrahman</h3>
+                    <p data-i18n="title">Business Information Technology Specialist</p>
+                    <p data-i18n="passionStatement" data-footer-description>Passionate about technology and innovation, dedicated to creating solutions that make a difference.</p>
+                    <div class="social-links" data-footer-links>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Hussein2334?tab=repositories" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:husseinali2334@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-i18n="quickLinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> <span data-i18n="navAbout">About</span></a></li>
+                        <li><a href="#education"><i class="fas fa-chevron-right"></i> <span data-i18n="navEducation">Education</span></a></li>
+                        <li><a href="#experience"><i class="fas fa-chevron-right"></i> <span data-i18n="navExperience">Experience</span></a></li>
+                        <li><a href="#sql-training"><i class="fas fa-chevron-right"></i> <span data-i18n="navTraining">Training</span></a></li>
+                        <li><a href="#referees"><i class="fas fa-chevron-right"></i> <span data-i18n="navReferees">Referees</span></a></li>
+                        <li><a href="#achievements"><i class="fas fa-chevron-right"></i> <span data-i18n="navAchievements">Achievements</span></a></li>
+                        <li id="photo-footer-link"><a href="#photo-gallery"><i class="fas fa-chevron-right"></i> <span data-i18n="navPhotos">Photos</span></a></li>
+                        <li><a href="#certificates-gallery"><i class="fas fa-chevron-right"></i> <span data-i18n="navCertificates">Certificates</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-i18n="contactInfo">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:husseinali2334@gmail.com"><i class="fas fa-envelope"></i> husseinali2334@gmail.com</a></li>
+                        <li><a href="tel:+255658216348"><i class="fas fa-phone"></i> +255 658 216 348</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span data-i18n="location">Mombasa - Zanzibar</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hussein Ali Abdulrahman. <span data-i18n="rightsReserved">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                // Navigation
+                navAbout: "About",
+                navEducation: "Education",
+                navExperience: "Experience",
+                navTraining: "Training",
+                navHobbies: "Hobbies",
+                navReferees: "Referees",
+                navCertificates: "Certificates",
+                navPhotos: "Photos",
+                photosDescription: "A few moments and highlights.",
+                navAchievements: "Achievements",
+                
+                // Header
+                name: "HUSSEIN ALI ABDULRAHMAN",
+                title: "Business Information Technology Specialist",
+                location: "Mombasa - Zanzibar",
+                
+                // About Section
+                personalDetails: "Personal Particulars",
+                objective: "Seeking employment opportunity in Business Information Technology where I can utilize my technical skills, education, and passion for technology to contribute to organizational success.",
+                firstName: "First Name:",
+                middleName: "Middle Name:",
+                sirName: "Sir Name:",
+                dob: "Date of Birth:",
+                pob: "Place of Birth:",
+                domicile: "Domicile:",
+                gender: "Gender:",
+                male: "Male",
+                maritalStatus: "Marital Status:",
+                single: "Single",
+                technicalSkills: "Technical Skills",
+                pcMaintenance: "PC Maintenance",
+                windowsInstallation: "Windows Installation",
+                networkTroubleshooting: "Network Troubleshooting",
+                databaseManagement: "Database Management",
+                networking: "Networking",
+                printerInstallation: "Printer Installation",
+                websiteDevelopment: "Website Development",
+                desktopSupport: "Desktop Support",
+                systemAnalysis: "System Analysis & Design",
+                mobileDevelopment: "Mobile Development",
+                
+                // Education
+                education: "Education Qualification",
+                bachelorIT: "Bachelor of Information Technology",
+                bachelorDesc: "Currently pursuing a Bachelor's degree in Information Technology (NTA Level 8), building on my Diploma with advanced coursework in IT project management, network administration, information security, data mining, and open-source software deployment. Current Cumulative GPA (CGPA): 3.53.",
+                ongoing: "2023 - 2026 (Ongoing)",
+                ongoingShort: "Ongoing",
+                viewResults: "View Current Results",
+                diplomaBIT: "Diploma in Business Information Technology",
+                diplomaDesc: "Comprehensive study of business information systems, database management, networking, and software development.",
+                certificateBIT: "Certificate in Business Information Technology",
+                certificateDesc: "Fundamental knowledge in IT concepts, computer systems, and basic programming principles.",
+                secondaryCert: "Certificate of Secondary Education",
+                secondaryDesc: "Completed secondary education with focus on sciences and mathematics.",
+                
+                // Experience
+                experience: "Professional Experience",
+                pbzTraining: "Field Training - Business Information Technology",
+                pbzDesc: "One month of intensive field training focusing on practical IT skills in a banking environment.",
+                windowsDriverInstallation: "Windows & Driver Installation",
+                egazTraining: "Field Training - Business Information Technology",
+                egazDesc: "Two months of comprehensive field training focusing on software development and system administration.",
+                backendDev: "Back-end Software Development",
+                frontendDev: "Front-end Software Development",
+                networkingTroubleshooting: "Networking & Troubleshooting",
+                serverManagement: "Windows Server Installation & Management",
+                
+                // SQL Training
+                professionalTraining: "Professional Training",
+                sqlCertification: "SQL & SQL Server Certification",
+                sqlDesc: "Completed comprehensive training program on SQL and SQL Server through Udemy, covering essential database management skills.",
+                sqlBasics: "SQL Basics",
+                advancedSQL: "Advanced SQL Queries",
+                databaseDesign: "Database Design",
+                sqlServerAdmin: "SQL Server Administration",
+                storedProcedures: "Stored Procedures & Functions",
+                performanceTuning: "Performance Tuning",
+                dataSecurity: "Data Security",
+                
+                // Hobbies
+                hobbies: "Hobbies & Ambitions",
+                swimming: "Swimming",
+                football: "Football",
+                reading: "Reading",
+                teamwork: "Team Work",
+                counselling: "Counselling",
+                cooperative: "Cooperative",
+                
+                // Referees
+                referees: "Referees",
+                seniorInstructor: "Senior Instructor",
+                teacher: "Teacher",
+                ministryEducation: "Ministry of Education and Vocational Training",
+                managerDigital: "Manager Digital Banking & Innovation",
+                
+                // Footer
+                quickLinks: "Quick Links",
+                contactInfo: "Contact Info",
+                passionStatement: "Passionate about technology and innovation, dedicated to creating solutions that make a difference.",
+                
+                // Certification
+                certification: "Certification",
+                certificationText: "I, the undersigned, hereby certify that to the best of my knowledge believe, these curriculum vitae correctly describe me well, my qualifications and my experience at large.",
+
+                // Certificates Gallery
+                certificatesSectionTitle: "Certificates & Documents",
+                certificatesSectionDesc: "Click on any certificate below to view the original scanned document.",
+                viewCertificate: "View Certificate",
+                viewTranscript: "View Transcript",
+                clickToView: "Click to view",
+                pbzCertTitle: "Certificate of Participation",
+                egazCertTitle: "Certificate of Completion",
+                burpCertTitle: "Burp Suite: Hands-On Testing",
+                certAward: "Certificate",
+                certTranscript: "Academic Transcript",
+                certResultsP1: "Results (Page 1)",
+                certResultsP2: "Results (Page 2)",
+                certModalFooter: "Original document provided by the issuing institution.",
+
+                // Achievements & Recognition
+                achievements: "Achievements & Recognition",
+                achievementsDesc: "Beyond my core studies, I have taken part in extra training and leadership activities that have shaped my personal and professional growth.",
+                unescoTitle: "UNESCO Certificate of Completion",
+                unescoDesc: "Successfully completed a one-year online course on Sexuality Education, HIV & AIDS, Gender-Based Violence, Relationships, and Resource Management, offered in collaboration with the UNESCO Dar es Salaam Office (April 2025).",
+                traTitle: "TRA Certificate of Awards",
+                traDesc: "Recognized by the Tanzania Revenue Authority for active participation as a Member of the IAA Tax Association, Arusha Region (2026), reflecting my growing interest in taxation and public financial systems.",
+                isrcTitle: "Certificate of Recognition - ISRC",
+                isrcDesc: "Recognized for participation in the 2025/2026 IAA Students Organisation as an ISRC member representing BIT 3, in appreciation of my commitment, leadership skills, ethical conduct, and hardworking spirit.",
+                zanusoTitle: "Class Representative Certificate",
+                zanusoDesc: "Served as Class Representative for the 2022/2023 academic year at Zanzibar University, officially recognized by the Zanzibar University Students Organisation for leadership and dedication to fellow students.",
+                
+                // Footer
+                rightsReserved: "All rights reserved."
+            },
+            sw: {
+                // Navigation
+                navAbout: "Kuhusu",
+                navEducation: "Elimu",
+                navExperience: "Uzoefu",
+                navTraining: "Mafunzo",
+                navHobbies: "Vipawa",
+                navReferees: "Wasaidizi",
+                navCertificates: "Vyeti",
+                navPhotos: "Picha",
+                photosDescription: "Picha na kumbukumbu mbalimbali.",
+                navAchievements: "Mafanikio",
+                
+                // Header
+                name: "HUSSEIN ALI ABDULRAHMAN",
+                title: "Mtaalamu wa Teknolojia ya Habari na Biashara",
+                location: "Mombasa - Zanzibar",
+                
+                // About Section
+                personalDetails: "Taarifa Binafsi",
+                objective: "Natafuta fursa ya ajira katika Teknolojia ya Habari na Biashara ambapo ninaweza kutumia ujuzi wangu wa kiufundi, elimu, na shauku yangu ya teknolojia kuchangia mafanikio ya shirika.",
+                firstName: "Jina la Kwanza:",
+                middleName: "Jina la Kati:",
+                sirName: "Jina la Mwisho:",
+                dob: "Tarehe ya Kuzaliwa:",
+                pob: "Mahali pa Kuzaliwa:",
+                domicile: "Makazi:",
+                gender: "Jinsia:",
+                male: "Mwanaume",
+                maritalStatus: "Hali ya Ndoa:",
+                single: "Sijaoa",
+                technicalSkills: "Ujuzi wa Kiufundi",
+                pcMaintenance: "Matengenezo ya Kompyuta",
+                windowsInstallation: "Usakinishaji wa Windows",
+                networkTroubleshooting: "Utatuzi wa Tatizo la Mtandao",
+                databaseManagement: "Usimamizi wa Hifadhidata",
+                networking: "Mtandao",
+                printerInstallation: "Usakinishaji wa Printa",
+                websiteDevelopment: "Ukuzaji wa Tovuti",
+                desktopSupport: "Usaidizi wa Desktop",
+                systemAnalysis: "Uchambuzi na Ubunifu wa Mfumo",
+                mobileDevelopment: "Ukuzaji wa Programu za Rununu",
+                
+                // Education
+                education: "Sifa za Elimu",
+                bachelorIT: "Shahada ya Teknolojia ya Habari (Bachelor)",
+                bachelorDesc: "Kwa sasa ninasoma Shahada ya Teknolojia ya Habari (NTA Level 8), ikijengea juu ya Diploma yangu kwa masomo ya juu zaidi kama usimamizi wa miradi ya TEHAMA, usimamizi wa mitandao, usalama wa taarifa, uchimbaji data, na usambazaji wa programu huria. GPA ya Jumla kwa sasa (CGPA): 3.53.",
+                ongoing: "2023 - 2026 (Inaendelea)",
+                ongoingShort: "Inaendelea",
+                viewResults: "Ona Matokeo ya Sasa",
+                diplomaBIT: "Diploma katika Teknolojia ya Habari na Biashara",
+                diplomaDesc: "Masomo kamili ya mifumo ya habari ya biashara, usimamizi wa hifadhidata, mitandao, na ukuzaji wa programu.",
+                certificateBIT: "Cheti katika Teknolojia ya Habari na Biashara",
+                certificateDesc: "Ujuzi wa msingi katika dhana za TEHAMA, mifumo ya kompyuta, na kanuni za kimsingi za programu.",
+                secondaryCert: "Cheti cha Elimu ya Sekondari",
+                secondaryDesc: "Kumaliza elimu ya sekondari kwa kuzingatia sayansi na hisabati.",
+                
+                // Experience
+                experience: "Uzoefu wa Kitaaluma",
+                pbzTraining: "Mafunzo ya Uwanja - Teknolojia ya Habari na Biashara",
+                pbzDesc: "Mwezi mmoja wa mafunzo makali ya uwanja yanayolenga ujuzi wa vitendo wa TEHAMA katika mazingira ya benki.",
+                windowsDriverInstallation: "Usakinishaji wa Windows na Madereva",
+                egazTraining: "Mafunzo ya Uwanja - Teknolojia ya Habari na Biashara",
+                egazDesc: "Miezi miwili ya mafunzo kamili ya uwanja yanayolenga ukuzaji wa programu na usimamizi wa mfumo.",
+                backendDev: "Ukuzaji wa Programu ya Mwisho",
+                frontendDev: "Ukuzaji wa Programu ya Mwanzoni",
+                networkingTroubleshooting: "Mtandao na Utatuzi wa Matatizo",
+                serverManagement: "Usakinishaji na Usimamizi wa Windows Server",
+                
+                // SQL Training
+                professionalTraining: "Mafunzo ya Kitaaluma",
+                sqlCertification: "Cheti cha SQL na SQL Server",
+                sqlDesc: "Nimekamilisha programu kamili ya mafunzo kuhusu SQL na SQL Server kupitia Udemy, ikifunua ujuzi muhimu wa usimamizi wa hifadhidata.",
+                sqlBasics: "Misingi ya SQL",
+                advancedSQL: "Maswali ya Juu ya SQL",
+                databaseDesign: "Ubunifu wa Hifadhidata",
+                sqlServerAdmin: "Usimamizi wa SQL Server",
+                storedProcedures: "Itikio la Kuhifadhiwa na Vitendakazi",
+                performanceTuning: "Urekebishaji wa Utafutaji",
+                dataSecurity: "Usalama wa Data",
+                
+                // Hobbies
+                hobbies: "Vipawa na Matamanio",
+                swimming: "Kuogelea",
+                football: "Kandanda",
+                reading: "Kusoma",
+                teamwork: "Kazi ya Timu",
+                counselling: "Kushauri",
+                cooperative: "Ushirikiano",
+                
+                // Referees
+                referees: "Wasaidizi",
+                seniorInstructor: "Mwalimu Mkuu",
+                teacher: "Mwalimu",
+                ministryEducation: "Wizara ya Elimu na Mafunzo ya Ufundi",
+                managerDigital: "Meneja wa Benki ya Kidijitali na Uvumbuzi",
+                
+                // Footer
+                quickLinks: "Viungo vya Haraka",
+                contactInfo: "Mawasiliano",
+                passionStatement: "Nina shauku ya teknolojia na uvumbuzi, nimejikita katika kuunda suluhisho zinazofanya tofauti.",
+                
+                // Certification
+                certification: "Cheti",
+                certificationText: "Mimi, mwenye kutia sahihi hapa chini, ninathibitisha kwa mujibu wa ujuzi wangu kwamba, hii wasifu inanielezea vizuri, sifa zangu na uzoefu wangu kwa ujumla.",
+
+                // Certificates Gallery
+                certificatesSectionTitle: "Vyeti na Nyaraka",
+                certificatesSectionDesc: "Bofya kwenye cheti chochote hapa chini kuona nyaraka halisi iliyochanganuliwa.",
+                viewCertificate: "Ona Cheti",
+                viewTranscript: "Ona Transcript",
+                clickToView: "Bofya kuona",
+                pbzCertTitle: "Cheti cha Ushiriki",
+                egazCertTitle: "Cheti cha Kukamilisha",
+                burpCertTitle: "Burp Suite: Mafunzo ya Vitendo",
+                certAward: "Cheti",
+                certTranscript: "Nakala ya Matokeo",
+                certResultsP1: "Matokeo (Ukurasa 1)",
+                certResultsP2: "Matokeo (Ukurasa 2)",
+                certModalFooter: "Nyaraka halisi iliyotolewa na taasisi husika.",
+
+                // Achievements & Recognition
+                achievements: "Mafanikio na Kutambuliwa",
+                achievementsDesc: "Zaidi ya masomo yangu makuu, nimeshiriki katika mafunzo na shughuli za uongozi zilizonisaidia kukua kibinafsi na kikazi.",
+                unescoTitle: "Cheti cha Kukamilisha - UNESCO",
+                unescoDesc: "Nimekamilisha kwa ufanisi kozi ya mtandaoni ya mwaka mmoja kuhusu Elimu ya Jinsia, VVU na UKIMWI, Ukatili wa Kijinsia, Mahusiano, na Usimamizi wa Rasilimali, iliyotolewa kwa ushirikiano na Ofisi ya UNESCO Dar es Salaam (Aprili 2025).",
+                traTitle: "Cheti cha Tuzo - TRA",
+                traDesc: "Nimetambuliwa na Mamlaka ya Mapato Tanzania (TRA) kwa ushiriki kama Mwanachama wa Chama cha Kodi cha IAA, Mkoa wa Arusha (2026), ikionesha shauku yangu inayokua katika kodi na mifumo ya fedha za umma.",
+                isrcTitle: "Cheti cha Kutambuliwa - ISRC",
+                isrcDesc: "Nimetambuliwa kwa ushiriki katika Shirika la Wanafunzi la IAA 2025/2026 kama mwanachama wa ISRC nikiwakilisha BIT 3, kwa kuthaminiwa kwa dhamira yangu, ujuzi wa uongozi, maadili mema, na moyo wa kufanya kazi kwa bidii.",
+                zanusoTitle: "Cheti cha Mwakilishi wa Darasa",
+                zanusoDesc: "Nilihudumu kama Mwakilishi wa Darasa kwa mwaka wa masomo 2022/2023 katika Chuo Kikuu cha Zanzibar, nikitambuliwa rasmi na Shirika la Wanafunzi wa Chuo Kikuu cha Zanzibar (ZANUSO) kwa uongozi na kujitolea kwa wanafunzi wenzangu.",
+                
+                // Footer
+                rightsReserved: "Haki zote zimehifadhiwa."
+            },
+            ar: {
+                // Navigation
+                navAbout: "حول",
+                navEducation: "التعليم",
+                navExperience: "الخبرة",
+                navTraining: "التدريب",
+                navHobbies: "الهوايات",
+                navReferees: "المرجعون",
+                navCertificates: "الشهادات",
+                navPhotos: "الصور",
+                photosDescription: "صور وذكريات مختارة.",
+                navAchievements: "الإنجازات",
+                
+                // Header
+                name: "حسين علي عبدالرحمن",
+                title: "أخصائي تكنولوجيا معلومات الأعمال",
+                location: "ممباسا - زنجبار",
+                
+                // About Section
+                personalDetails: "البيانات الشخصية",
+                objective: "أسعى للحصول على فرصة عمل في تكنولوجيا معلومات الأعمال حيث يمكنني استخدام مهاراتي التقنية وتعليمي وشغفي بالتكنولوجيا للمساهمة في نجاح المنظمة.",
+                firstName: "الاسم الأول:",
+                middleName: "الاسم الأوسط:",
+                sirName: "اسم العائلة:",
+                dob: "تاريخ الميلاد:",
+                pob: "مكان الميلاد:",
+                domicile: "محل الإقامة:",
+                gender: "الجنس:",
+                male: "ذكر",
+                maritalStatus: "الحالة الاجتماعية:",
+                single: "أعزب",
+                technicalSkills: "المهارات التقنية",
+                pcMaintenance: "صيانة أجهزة الكمبيوتر",
+                windowsInstallation: "تثبيت نظام Windows",
+                networkTroubleshooting: "استكشاف أخطاء الشبكة وإصلاحها",
+                databaseManagement: "إدارة قواعد البيانات",
+                networking: "الشبكات",
+                printerInstallation: "تثبيت الطابعات",
+                websiteDevelopment: "تطوير المواقع الإلكترونية",
+                desktopSupport: "دعم سطح المكتب",
+                systemAnalysis: "تحليل وتصميم النظم",
+                mobileDevelopment: "تطوير التطبيقات النقالة",
+                
+                // Education
+                education: "المؤهلات التعليمية",
+                bachelorIT: "بكالوريوس في تكنولوجيا المعلومات",
+                bachelorDesc: "أدرس حاليًا لدرجة البكالوريوس في تكنولوجيا المعلومات (المستوى الوطني 8)، بناءً على الدبلوم الذي حصلت عليه، بمقررات متقدمة في إدارة مشاريع تكنولوجيا المعلومات، وإدارة الشبكات، وأمن المعلومات، وتنقيب البيانات، ونشر البرمجيات مفتوحة المصدر. المعدل التراكمي الحالي: 3.53.",
+                ongoing: "2023 - 2026 (جارٍ)",
+                ongoingShort: "جارٍ",
+                viewResults: "عرض النتائج الحالية",
+                diplomaBIT: "دبلوم في تكنولوجيا معلومات الأعمال",
+                diplomaDesc: "دراسة شاملة لأنظمة معلومات الأعمال، وإدارة قواعد البيانات، والشبكات، وتطوير البرمجيات.",
+                certificateBIT: "شهادة في تكنولوجيا معلومات الأعمال",
+                certificateDesc: "المعرفة الأساسية في مفاهيم تكنولوجيا المعلومات، وأنظمة الكمبيوتر، ومبادئ البرمجة الأساسية.",
+                secondaryCert: "شهادة التعليم الثانوي",
+                secondaryDesc: "أكملت التعليم الثانوي مع التركيز على العلوم والرياضيات.",
+                
+                // Experience
+                experience: "الخبرة المهنية",
+                pbzTraining: "تدريب ميداني - تكنولوجيا معلومات الأعمال",
+                pbzDesc: "شهر واحد من التدريب الميداني المكثف الذي يركز على المهارات العملية لتكنولوجيا المعلومات في بيئة مصرفية.",
+                windowsDriverInstallation: "تثبيت Windows والسواقات",
+                egazTraining: "تدريب ميداني - تكنولوجيا معلومات الأعمال",
+                egazDesc: "شهران من التدريب الميداني الشامل الذي يركز على تطوير البرمجيات وإدارة النظم.",
+                backendDev: "تطوير البرمجيات الخلفية",
+                frontendDev: "تطوير البرمجيات الأمامية",
+                networkingTroubleshooting: "الشبكات واستكشاف الأخطاء وإصلاحها",
+                serverManagement: "تثبيت وإدارة خادم Windows",
+                
+                // SQL Training
+                professionalTraining: "التدريب المهني",
+                sqlCertification: "شهادة SQL وخادم SQL",
+                sqlDesc: "أكملت برنامجًا تدريبيًا شاملاً حول SQL وخادم SQL من خلال Udemy، يغطي مهارات إدارة قواعد البيانات الأساسية.",
+                sqlBasics: "أساسيات SQL",
+                advancedSQL: "استعلامات SQL المتقدمة",
+                databaseDesign: "تصميم قواعد البيانات",
+                sqlServerAdmin: "إدارة خادم SQL",
+                storedProcedures: "الإجراءات المخزنة والدوال",
+                performanceTuning: "ضبط الأداء",
+                dataSecurity: "أمان البيانات",
+                
+                // Hobbies
+                hobbies: "الهوايات والطموحات",
+                swimming: "السباحة",
+                football: "كرة القدم",
+                reading: "القراءة",
+                teamwork: "العمل الجماعي",
+                counselling: "الإرشاد",
+                cooperative: "التعاون",
+                
+                // Referees
+                referees: "المرجعون",
+                seniorInstructor: "مدرس أول",
+                teacher: "مدرس",
+                ministryEducation: "وزارة التعليم والتدريب المهني",
+                managerDigital: "مدير الخدمات المصرفية الرقمية والابتكار",
+                
+                // Footer
+                quickLinks: "روابط سريعة",
+                contactInfo: "معلومات الاتصال",
+                passionStatement: "أنا شغوف بالتكنولوجيا والابتكار، مكرس لخلق حلول تحدث فرقاً.",
+                
+                // Certification
+                certification: "التصديق",
+                certificationText: "أنا الموقع أدناه، أقر بأنه على حد علمي، فإن سيرتي الذاتية هذه تصفني جيدًا، ومؤهلاتي وخبرتي بشكل عام.",
+
+                // Certificates Gallery
+                certificatesSectionTitle: "الشهادات والوثائق",
+                certificatesSectionDesc: "انقر على أي شهادة أدناه لعرض المستند الأصلي الممسوح ضوئيًا.",
+                viewCertificate: "عرض الشهادة",
+                viewTranscript: "عرض كشف الدرجات",
+                clickToView: "انقر للعرض",
+                pbzCertTitle: "شهادة المشاركة",
+                egazCertTitle: "شهادة إتمام",
+                burpCertTitle: "Burp Suite: اختبار عملي",
+                certAward: "الشهادة",
+                certTranscript: "كشف الدرجات الأكاديمي",
+                certResultsP1: "النتائج (الصفحة 1)",
+                certResultsP2: "النتائج (الصفحة 2)",
+                certModalFooter: "المستند الأصلي مقدم من الجهة المانحة.",
+
+                // Achievements & Recognition
+                achievements: "الإنجازات والتقدير",
+                achievementsDesc: "بالإضافة إلى دراستي الأساسية، شاركت في تدريبات وأنشطة قيادية أسهمت في نموي الشخصي والمهني.",
+                unescoTitle: "شهادة إتمام - اليونسكو",
+                unescoDesc: "أكملت بنجاح دورة إلكترونية لمدة عام حول التربية الجنسية، وفيروس نقص المناعة البشرية والإيدز، والعنف القائم على النوع الاجتماعي، والعلاقات، وإدارة الموارد، بالتعاون مع مكتب اليونسكو في دار السلام (أبريل 2025).",
+                traTitle: "شهادة تقدير - هيئة الإيرادات التنزانية",
+                traDesc: "حصلت على تقدير من هيئة الإيرادات التنزانية (TRA) لمشاركتي الفعالة كعضو في جمعية الضرائب بمعهد المحاسبة أروشا، منطقة أروشا (2026)، مما يعكس اهتمامي المتنامي بالضرائب والأنظمة المالية العامة.",
+                isrcTitle: "شهادة تقدير - ISRC",
+                isrcDesc: "تم تقديري للمشاركة في منظمة طلاب معهد المحاسبة أروشا 2025/2026 كعضو ISRC ممثلاً لمجموعة BIT 3، تقديرًا لالتزامي ومهاراتي القيادية وسلوكي الأخلاقي وروح العمل الجاد.",
+                zanusoTitle: "شهادة ممثل الفصل",
+                zanusoDesc: "عملت كممثل للفصل للعام الدراسي 2022/2023 في جامعة زنجبار، وحصلت على اعتراف رسمي من منظمة طلاب جامعة زنجبار (ZANUSO) تقديرًا للقيادة والتفاني تجاه زملائي الطلاب.",
+                
+                // Footer
+                rightsReserved: "جميع الحقوق محفوظة."
+            }
+        };
+
+        // ================= Certificate Viewer =================
+        const certificatesData = {
+            bachelor: {
+                titleKey: 'bachelorIT',
+                fallbackTitle: 'Bachelor of Information Technology - Current Results',
+                images: [
+                    { src: 'certificates/iaa_results_1.jpg', labelKey: 'certResultsP1', fallbackLabel: 'Results (Page 1)' },
+                    { src: 'certificates/iaa_results_2.jpg', labelKey: 'certResultsP2', fallbackLabel: 'Results (Page 2)' }
+                ]
+            },
+            diploma: {
+                titleKey: 'diplomaBIT',
+                fallbackTitle: 'Diploma in Business Information Technology',
+                images: [
+                    { src: 'certificates/diploma_award.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' },
+                    { src: 'certificates/diploma_transcript.jpg', labelKey: 'certTranscript', fallbackLabel: 'Academic Transcript' }
+                ]
+            },
+            certificate: {
+                titleKey: 'certificateBIT',
+                fallbackTitle: 'Certificate in Business Information Technology',
+                images: [
+                    { src: 'certificates/certificate_award.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' },
+                    { src: 'certificates/certificate_transcript.jpg', labelKey: 'certTranscript', fallbackLabel: 'Academic Transcript' }
+                ]
+            },
+            secondary: {
+                titleKey: 'secondaryCert',
+                fallbackTitle: 'Certificate of Secondary Education',
+                images: [
+                    { src: 'certificates/secondary_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            pbz: {
+                titleKey: 'pbzCertTitle',
+                fallbackTitle: 'Certificate of Participation - PBZ',
+                images: [
+                    { src: 'certificates/pbz_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            egaz: {
+                titleKey: 'egazCertTitle',
+                fallbackTitle: 'Certificate of Completion - eGAZ',
+                images: [
+                    { src: 'certificates/egaz_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            sql: {
+                titleKey: 'sqlCertification',
+                fallbackTitle: 'SQL & SQL Server Certification',
+                images: [
+                    { src: 'certificates/sql_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            burpsuite: {
+                titleKey: 'burpCertTitle',
+                fallbackTitle: 'Burp Suite: Hands-On Testing',
+                images: [
+                    { src: 'certificates/burpsuite_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            unesco: {
+                titleKey: 'unescoTitle',
+                fallbackTitle: 'UNESCO Certificate of Completion',
+                images: [
+                    { src: 'certificates/unesco_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            tra: {
+                titleKey: 'traTitle',
+                fallbackTitle: 'TRA Certificate of Awards',
+                images: [
+                    { src: 'certificates/tra_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            isrc: {
+                titleKey: 'isrcTitle',
+                fallbackTitle: 'Certificate of Recognition - ISRC',
+                images: [
+                    { src: 'certificates/isrc_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            },
+            zanuso: {
+                titleKey: 'zanusoTitle',
+                fallbackTitle: 'Class Representative Certificate',
+                images: [
+                    { src: 'certificates/zanuso_certificate.jpg', labelKey: 'certAward', fallbackLabel: 'Certificate' }
+                ]
+            }
+        };
+
+        let activeCertKey = null;
+
+        function tr(key, fallback) {
+            const lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+            return (translations[lang] && translations[lang][key]) ? translations[lang][key] : fallback;
+        }
+
+        function openCertModal(certKey, imgIndex) {
+            const cert = certificatesData[certKey];
+            if (!cert) return;
+            activeCertKey = certKey;
+            const index = imgIndex || 0;
+
+            const overlay = document.getElementById('cert-modal-overlay');
+            const titleEl = document.getElementById('cert-modal-title');
+            const imgEl = document.getElementById('cert-modal-image');
+            const tabsEl = document.getElementById('cert-modal-tabs');
+
+            titleEl.textContent = tr(cert.titleKey, cert.fallbackTitle);
+            imgEl.src = cert.images[index].src;
+            imgEl.alt = tr(cert.titleKey, cert.fallbackTitle);
+
+            // Build tabs if more than one image (e.g. Award + Transcript)
+            tabsEl.innerHTML = '';
+            if (cert.images.length > 1) {
+                cert.images.forEach((img, i) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'cert-modal-tab' + (i === index ? ' active' : '');
+                    btn.textContent = tr(img.labelKey, img.fallbackLabel);
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        openCertModal(certKey, i);
+                    };
+                    tabsEl.appendChild(btn);
+                });
+            }
+
+            overlay.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            const overlay = document.getElementById('cert-modal-overlay');
+            overlay.classList.remove('show');
+            document.body.style.overflow = '';
+            activeCertKey = null;
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeCertModal();
+        });
+
+        // DOM Elements
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeText = document.getElementById('mode-text');
+        const body = document.body;
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const languageButton = document.getElementById('language-button');
+        const languageOptions = document.getElementById('language-options');
+        const currentLanguage = document.getElementById('current-language');
+        const celebration = document.getElementById('celebration');
+        const tanzaniaFlagEffect = document.getElementById('tanzania-flag-effect');
+        const saudiFlagEffect = document.getElementById('saudi-flag-effect');
+        const celebrateButton = document.getElementById('celebrate-button');
+        const profileImg = document.getElementById('profile-img');
+
+        // Dark/Light Mode Toggle
+        function setTheme(isDark, persist = true) {
+            const modeIcon = modeToggle.querySelector('i');
+            if (isDark) {
+                body.classList.add('dark-mode');
+                modeIcon.className = 'fas fa-sun';
+                modeText.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                modeIcon.className = 'fas fa-moon';
+                modeText.textContent = 'Dark Mode';
+            }
+            if (persist) localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        window.setCvTheme = (isDark) => setTheme(Boolean(isDark));
+        setTheme(localStorage.getItem('theme') === 'dark', false);
+
+        // Toggle mode when button is clicked
+        modeToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            setTheme(!body.classList.contains('dark-mode'));
+            
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Mobile Navigation
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Close language dropdown if open
+            if (languageOptions.classList.contains('show')) {
+                languageOptions.classList.remove('show');
+            }
+            
+            // Prevent body scrolling when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Close language dropdown if open
+                if (languageOptions.classList.contains('show')) {
+                    languageOptions.classList.remove('show');
+                }
+            });
+        });
+
+        // Close menus when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target) || hamburger.contains(event.target);
+            const isClickInsideLanguage = languageButton.contains(event.target) || languageOptions.contains(event.target);
+            
+            // Close mobile menu if clicking outside
+            if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Close language dropdown if clicking outside
+            if (!isClickInsideLanguage && languageOptions.classList.contains('show')) {
+                languageOptions.classList.remove('show');
+            }
+        });
+
+        // Language Switcher
+        let currentLang = localStorage.getItem('language') || 'en';
+        setLanguage(currentLang);
+        
+        // Toggle language dropdown
+        languageButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageOptions.classList.toggle('show');
+            
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Language selection
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+                languageOptions.classList.remove('show');
+                
+                // Update active option
+                document.querySelectorAll('.language-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Set language function
+        function setLanguage(lang) {
+            // Update current language
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update button text
+            if (lang === 'en') {
+                currentLanguage.textContent = 'English';
+                celebrateButton.classList.remove('arabic-mode');
+            }
+            if (lang === 'sw') {
+                currentLanguage.textContent = 'Kiswahili';
+                celebrateButton.classList.remove('arabic-mode');
+                // Trigger Tanzania flag celebration when switching to Swahili
+                setTimeout(() => {
+                    startCelebration('tanzania');
+                }, 500);
+            }
+            if (lang === 'ar') {
+                currentLanguage.textContent = 'العربية';
+                celebrateButton.classList.add('arabic-mode');
+                // Trigger Saudi Arabia flag celebration when switching to Arabic
+                setTimeout(() => {
+                    startCelebration('saudi');
+                }, 500);
+            }
+            
+            // Update text content for all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update HTML direction for RTL languages
+            if (lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.setAttribute('dir', 'ltr');
+            }
+            
+            // Set active language option in dropdown
+            document.querySelectorAll('.language-option').forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.getAttribute('data-lang') === lang) {
+                    opt.classList.add('active');
+                }
+            });
+            window.dispatchEvent(new Event('cv-language-changed'));
+
+            // Refresh certificate modal text if currently open
+            if (typeof activeCertKey !== 'undefined' && activeCertKey) {
+                const overlay = document.getElementById('cert-modal-overlay');
+                if (overlay && overlay.classList.contains('show')) {
+                    openCertModal(activeCertKey, 0);
+                }
+            }
+
+        }
+
+        window.setCvLanguage = setLanguage;
+
+        // Celebration System
+        function startCelebration(type = 'generic') {
+            // Clear previous celebrations
+            celebration.innerHTML = '';
+            
+            if (type === 'tanzania') {
+                // Tanzania flag celebration
+                tanzaniaFlagEffect.style.display = 'block';
+                tanzaniaFlagEffect.style.animation = 'none';
+                void tanzaniaFlagEffect.offsetWidth;
+                tanzaniaFlagEffect.style.animation = 'flag-wave 3s ease-in-out forwards';
+                
+                // Add Tanzania flag confetti (Green, Yellow, Black)
+                for (let i = 0; i < 30; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    const colors = ['#1B5E20', '#FFD600', '#000000'];
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    celebration.appendChild(confetti);
+                }
+                
+                // Show celebration message
+                showMessage('🇹🇿 Uhuru na Umoja! 🇹🇿');
+                
+                // Play celebration sound
+                playCelebrationSound();
+                
+                // Hide flag effect after animation
+                setTimeout(() => {
+                    tanzaniaFlagEffect.style.display = 'none';
+                }, 3000);
+                
+            } else if (type === 'saudi') {
+                // Saudi Arabia flag celebration
+                saudiFlagEffect.style.display = 'block';
+                saudiFlagEffect.style.animation = 'none';
+                void saudiFlagEffect.offsetWidth;
+                saudiFlagEffect.style.animation = 'flag-wave 3s ease-in-out forwards';
+                
+                // Add Saudi Arabia flag confetti (Green color only)
+                for (let i = 0; i < 25; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.background = '#006233';
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    celebration.appendChild(confetti);
+                }
+                
+                // Show Arabic celebration message
+                showMessage('🇸🇦 الله أكبر 🇸🇦', 'arabic');
+                
+                // Play celebration sound
+                playCelebrationSound('arabic');
+                
+                // Hide flag effect after animation
+                setTimeout(() => {
+                    saudiFlagEffect.style.display = 'none';
+                }, 3000);
+                
+            } else {
+                // Generic celebration
+                for (let i = 0; i < 30; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.background = getRandomColor();
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    celebration.appendChild(confetti);
+                }
+                
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        createFirework();
+                    }, i * 200);
+                }
+                
+                showMessage('🎉 Congratulations! 🎉');
+                playCelebrationSound();
+            }
+        }
+
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = `${Math.random() * 100}%`;
+            firework.style.background = getRandomColor();
+            celebration.appendChild(firework);
+            
+            setTimeout(() => {
+                firework.remove();
+            }, 1500);
+        }
+
+        function getRandomColor() {
+            const colors = [
+                '#FF5252', '#FF4081', '#E040FB', '#7C4DFF', 
+                '#536DFE', '#448AFF', '#40C4FF', '#18FFFF',
+                '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41',
+                '#FFFF00', '#FFD740', '#FFAB40', '#FF6E40'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function showMessage(text, type = '') {
+            const message = document.createElement('div');
+            message.className = 'celebration-message' + (type ? ' ' + type : '');
+            message.textContent = text;
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 2000);
+        }
+
+        function playCelebrationSound(type = '') {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                let notes;
+                
+                if (type === 'arabic') {
+                    // Arabic scale notes
+                    notes = [293.66, 349.23, 392.00, 440.00, 493.88]; // D, F, G, A, B
+                } else {
+                    // Western scale notes
+                    notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                }
+                
+                notes.forEach((note, index) => {
+                    setTimeout(() => {
+                        playNote(note, audioContext);
+                    }, index * 200);
+                });
+            } catch (e) {
+                console.log('Audio context not supported');
+            }
+        }
+
+        function playNote(frequency, audioContext) {
+            try {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.5);
+            } catch (e) {
+                console.log('Audio note play failed');
+            }
+        }
+
+        // Touch effects
+        document.addEventListener('click', function(e) {
+            // Don't create touch effect for control buttons
+            if (e.target.closest('.mode-toggle') || 
+                e.target.closest('.language-button') || 
+                e.target.closest('.language-option') ||
+                e.target.closest('.hamburger') ||
+                e.target.closest('.celebrate-button')) {
+                return;
+            }
+            
+            // Create touch bubble effect
+            const touchEffect = document.createElement('div');
+            touchEffect.className = 'touch-effect';
+            touchEffect.style.left = `${e.clientX}px`;
+            touchEffect.style.top = `${e.clientY}px`;
+            document.body.appendChild(touchEffect);
+            
+            setTimeout(() => {
+                touchEffect.remove();
+            }, 500);
+            
+            // 10% chance to trigger mini celebration
+            if (Math.random() < 0.1) {
+                if (currentLang === 'sw') {
+                    startCelebration('tanzania');
+                } else if (currentLang === 'ar') {
+                    startCelebration('saudi');
+                } else {
+                    startCelebration('generic');
+                }
+            }
+        });
+
+        // Celebrate button click
+        celebrateButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (currentLang === 'sw') {
+                startCelebration('tanzania');
+            } else if (currentLang === 'ar') {
+                startCelebration('saudi');
+            } else {
+                startCelebration('generic');
+            }
+        });
+
+        // Profile picture click
+        profileImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (currentLang === 'sw') {
+                startCelebration('tanzania');
+            } else if (currentLang === 'ar') {
+                startCelebration('saudi');
+            } else {
+                startCelebration('generic');
+            }
+        });
+
+        // Skills click
+        document.querySelectorAll('.skill').forEach(skill => {
+            skill.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const miniCelebration = document.createElement('div');
+                miniCelebration.style.position = 'fixed';
+                miniCelebration.style.top = `${e.clientY}px`;
+                miniCelebration.style.left = `${e.clientX}px`;
+                miniCelebration.style.fontSize = '1.5rem';
+                miniCelebration.style.zIndex = '10000';
+                miniCelebration.style.pointerEvents = 'none';
+                miniCelebration.innerHTML = '🌟';
+                document.body.appendChild(miniCelebration);
+                
+                // Simple animation
+                let start = null;
+                function animate(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const translateY = -progress * 0.5;
+                    const opacity = 1 - progress / 1000;
+                    
+                    miniCelebration.style.transform = `translateY(${translateY}px)`;
+                    miniCelebration.style.opacity = opacity;
+                    
+                    if (progress < 1000) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        miniCelebration.remove();
+                    }
+                }
+                requestAnimationFrame(animate);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set active language option
+            document.querySelectorAll('.language-option').forEach(option => {
+                if (option.getAttribute('data-lang') === currentLang) {
+                    option.classList.add('active');
+                }
+            });
+            
+            // Update celebrate button based on language
+            if (currentLang === 'ar') {
+                celebrateButton.classList.add('arabic-mode');
+            }
+            
+            // Add initial celebration
+            setTimeout(() => {
+                createFirework();
+                createFirework();
+                createFirework();
+            }, 1000);
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .project-card, .sql-highlight, .hobby-item, .referee-card, .certificate-card, .achievement-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add animation delays
+        document.querySelectorAll('.timeline-item').forEach((el, index) => {
+            el.style.animationDelay = `${(index + 1) * 0.2}s`;
+        });
+    </script>
+    <script>
+        (() => {
+            const allowedFonts = new Set(['Poppins', 'Montserrat', 'Inter', 'Roboto', 'Arial', 'Georgia']);
+
+            function setText(selector, value) {
+                if (value == null) return;
+                document.querySelectorAll(selector).forEach((element) => {
+                    element.textContent = value;
+                });
+            }
+
+            function makeElement(tag, className, value) {
+                const element = document.createElement(tag);
+                if (className) element.className = className;
+                if (value != null) element.textContent = value;
+                return element;
+            }
+
+            function safeUrl(value) {
+                if (!value) return '';
+                try {
+                    const url = new URL(value, window.location.href);
+                    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+                } catch {
+                    return '';
+                }
+            }
+
+            function safeFooterUrl(value) {
+                if (!value) return '';
+                try {
+                    const url = new URL(value, window.location.href);
+                    return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '';
+                } catch {
+                    return '';
+                }
+            }
+
+            function openManagedCertificate(certificate, documentIndex = 0) {
+                const documents = Array.isArray(certificate.documents) && certificate.documents.length
+                    ? certificate.documents
+                    : [{ label: 'Certificate', url: certificate.image_url }];
+                const selectedDocument = documents[documentIndex] || documents[0];
+                const url = safeUrl(selectedDocument.url || selectedDocument.image_url);
+                if (!url) return;
+
+                const overlay = document.getElementById('cert-modal-overlay');
+                const title = document.getElementById('cert-modal-title');
+                const image = document.getElementById('cert-modal-image');
+                const tabs = document.getElementById('cert-modal-tabs');
+                const body = document.querySelector('.cert-modal-body');
+                const oldDocument = body.querySelector('.managed-certificate-document');
+
+                if (oldDocument) oldDocument.remove();
+                title.textContent = certificate.title || 'Certificate';
+                tabs.replaceChildren();
+                tabs.hidden = documents.length < 2;
+                documents.forEach((documentEntry, index) => {
+                    if (documents.length < 2) return;
+                    const button = makeElement('button', `cert-modal-tab${index === documentIndex ? ' active' : ''}`, documentEntry.label || `Page ${index + 1}`);
+                    button.type = 'button';
+                    button.addEventListener('click', () => openManagedCertificate(certificate, index));
+                    tabs.appendChild(button);
+                });
+
+                if (url.toLowerCase().split('?')[0].endsWith('.pdf')) {
+                    image.style.display = 'none';
+                    const documentFrame = makeElement('iframe', 'managed-certificate-document');
+                    documentFrame.src = url;
+                    documentFrame.title = certificate.title || 'Certificate';
+                    body.appendChild(documentFrame);
+                } else {
+                    image.style.display = '';
+                    image.src = url;
+                    image.alt = certificate.title || 'Certificate';
+                }
+
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function renderTimeline(sectionId, items, getTitle, getOrganization, certificates) {
+                const section = document.getElementById(sectionId);
+                const timeline = section?.querySelector('.timeline');
+                if (!timeline || !Array.isArray(items)) return;
+
+                timeline.replaceChildren();
+                items.forEach((item, index) => {
+                    const entry = makeElement('div', 'timeline-item');
+                    entry.style.animationDelay = `${(index + 1) * 0.2}s`;
+                    const date = makeElement('div', 'timeline-date', item.period);
+                    const content = makeElement('div', 'timeline-content');
+                    content.appendChild(makeElement('h3', '', getTitle(item)));
+
+                    const organization = getOrganization(item);
+                    if (organization) content.appendChild(makeElement('div', 'company', organization));
+                    if (item.description) content.appendChild(makeElement('p', '', item.description));
+
+                    const titleText = getTitle(item).toLowerCase();
+                    const organizationText = (organization || '').toLowerCase();
+                    const certificate = certificates.find((entry) => {
+                        const certificateTitle = entry.title.toLowerCase();
+                        const issuer = (entry.issuer || '').toLowerCase();
+                        return titleText.includes(certificateTitle)
+                            || certificateTitle.includes(titleText)
+                            || (organizationText && issuer && organizationText.includes(issuer));
+                    });
+                    const attachedDocuments = ['education', 'experience'].includes(sectionId) && Array.isArray(item.documents)
+                        ? item.documents.filter((documentEntry) => safeUrl(documentEntry.url || documentEntry.image_url))
+                        : [];
+                    if (attachedDocuments.length) {
+                        const documentTypes = sectionId === 'education'
+                            ? [
+                                { type: 'certificate', label: translations[currentLang]?.viewCertificate || 'View Certificate' },
+                                { type: 'transcript', label: translations[currentLang]?.viewTranscript || 'View Transcript' },
+                            ]
+                            : [{ type: 'certificate', label: translations[currentLang]?.viewCertificate || 'View Certificate' }];
+                        documentTypes.forEach(({ type, label }) => {
+                            const documents = attachedDocuments.filter((documentEntry) => (documentEntry.type || 'certificate') === type);
+                            if (!documents.length) return;
+                            const attachedCertificates = {
+                                title: `${getTitle(item)} - ${label}`,
+                                image_url: documents[0].url || documents[0].image_url,
+                                documents,
+                            };
+                            const button = makeElement('button', 'view-cert-btn', label);
+                            button.addEventListener('click', () => openManagedCertificate(attachedCertificates));
+                            content.appendChild(button);
+                        });
+                    } else if (certificate?.image_url) {
+                        const button = makeElement('button', 'view-cert-btn', translations[currentLang]?.viewCertificate || 'View Certificate');
+                        button.addEventListener('click', () => openManagedCertificate(certificate));
+                        content.appendChild(button);
+                    }
+
+                    entry.append(date, content);
+                    timeline.appendChild(entry);
+                });
+            }
+
+            function renderSkills(items) {
+                const skills = document.querySelector('.about-text .skills-container');
+                if (!skills || !Array.isArray(items)) return;
+                skills.replaceChildren();
+                items.forEach((item) => {
+                    const documents = Array.isArray(item.documents)
+                        ? item.documents.filter((documentEntry) => safeUrl(documentEntry.url || documentEntry.image_url))
+                        : [];
+                    if (!documents.length) {
+                        skills.appendChild(makeElement('div', 'skill', item.name));
+                        return;
+                    }
+
+                    const wrapper = makeElement('div', 'skill-with-certificate');
+                    wrapper.appendChild(makeElement('div', 'skill', item.name));
+                    const certificate = {
+                        title: item.name || 'Certificate',
+                        image_url: documents[0].url || documents[0].image_url,
+                        documents,
+                    };
+                    const button = makeElement('button', 'view-cert-btn skill-certificate-button', translations[currentLang]?.viewCertificate || 'View Certificate');
+                    button.addEventListener('click', () => openManagedCertificate(certificate));
+                    wrapper.appendChild(button);
+                    skills.appendChild(wrapper);
+                });
+            }
+
+            function renderAchievements(items, certificates) {
+                const grid = document.querySelector('#achievements .achievements-grid');
+                if (!grid || !Array.isArray(items)) return;
+                grid.replaceChildren();
+
+                items.forEach((item) => {
+                    const card = makeElement('div', 'achievement-card');
+                    const icon = makeElement('div', 'cert-icon');
+                    icon.appendChild(makeElement('i', 'fas fa-award'));
+                    card.append(icon, makeElement('h4', '', item.title));
+                    if (item.issuer) card.appendChild(makeElement('div', 'achievement-org', item.issuer));
+                    if (item.description) card.appendChild(makeElement('p', 'achievement-desc', item.description));
+
+                    const certificate = certificates.find((entry) =>
+                        entry.title.toLowerCase().includes(item.title.toLowerCase())
+                        || item.title.toLowerCase().includes(entry.title.toLowerCase())
+                    );
+                    const achievementDocuments = Array.isArray(item.documents)
+                        ? item.documents.filter((documentEntry) => safeUrl(documentEntry.url || documentEntry.image_url))
+                        : [];
+                    if (achievementDocuments.length) {
+                        const attachedCertificates = {
+                            title: item.title || 'Certificate',
+                            image_url: achievementDocuments[0].url || achievementDocuments[0].image_url,
+                            documents: achievementDocuments,
+                        };
+                        const button = makeElement('button', 'view-cert-btn', translations[currentLang]?.viewCertificate || 'View Certificate');
+                        button.addEventListener('click', () => openManagedCertificate(attachedCertificates));
+                        card.appendChild(button);
+                    } else if (certificate?.image_url) {
+                        const button = makeElement('button', 'view-cert-btn', translations[currentLang]?.viewCertificate || 'View Certificate');
+                        button.addEventListener('click', () => openManagedCertificate(certificate));
+                        card.appendChild(button);
+                    }
+                    grid.appendChild(card);
+                });
+            }
+
+            function renderCertificates(items) {
+                const grid = document.querySelector('#certificates-gallery .certificates-grid');
+                if (!grid || !Array.isArray(items)) return;
+                grid.replaceChildren();
+
+                items.forEach((certificate) => {
+                    const card = makeElement('div', 'certificate-card');
+                    const icon = makeElement('div', 'cert-icon');
+                    icon.appendChild(makeElement('i', 'fas fa-certificate'));
+                    card.append(icon);
+                    card.appendChild(makeElement('h4', '', certificate.title));
+                    if (certificate.issuer) card.appendChild(makeElement('p', '', certificate.issuer));
+
+                    const hint = makeElement('span', 'cert-view-hint');
+                    hint.appendChild(makeElement('i', 'fas fa-eye'));
+                    hint.appendChild(makeElement('span', '', 'Click to view'));
+                    card.appendChild(hint);
+
+                    if (certificate.image_url) {
+                        card.addEventListener('click', () => openManagedCertificate(certificate));
+                    } else {
+                        card.classList.add('certificate-unavailable');
+                        hint.textContent = 'Document not uploaded';
+                    }
+                    grid.appendChild(card);
+                });
+            }
+
+            function renderGallery(items) {
+                const section = document.getElementById('photo-gallery');
+                const grid = section?.querySelector('.photo-gallery-grid');
+                if (!section || !grid || !Array.isArray(items)) return;
+                grid.replaceChildren();
+                const photos = items.filter((item) => safeUrl(item.image_url));
+                section.hidden = photos.length === 0;
+                document.getElementById('photo-nav-link').hidden = photos.length === 0;
+                document.getElementById('photo-footer-link').hidden = photos.length === 0;
+
+                photos.forEach((photo) => {
+                    const card = makeElement('article', 'photo-gallery-card');
+                    const link = makeElement('a');
+                    const image = makeElement('img');
+                    image.src = safeUrl(photo.image_url);
+                    image.alt = photo.title || 'CV gallery photo';
+                    image.loading = 'lazy';
+                    link.href = image.src;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.appendChild(image);
+                    const caption = makeElement('div', 'photo-gallery-caption');
+                    caption.appendChild(makeElement('h3', '', photo.title));
+                    if (photo.description) caption.appendChild(makeElement('p', '', photo.description));
+                    card.append(link, caption);
+                    grid.appendChild(card);
+                });
+            }
+
+            function renderTraining(items, certificates) {
+                const container = document.querySelector('#sql-training .container');
+                if (!container || !Array.isArray(items)) return;
+                container.querySelectorAll('.sql-highlight').forEach((card) => card.remove());
+
+                items.forEach((item, index) => {
+                    const card = makeElement('div', 'sql-highlight');
+                    card.style.animationDelay = `${(index + 1) * 0.15}s`;
+                    const isSeedTraining = item.title === 'SQL & SQL Server Certification' && item.provider === 'Udemy';
+                    const heading = makeElement('h3');
+                    heading.appendChild(makeElement('i', 'fas fa-database'));
+                    heading.appendChild(makeElement('span', '', isSeedTraining
+                        ? translations[currentLang]?.sqlCertification || item.title
+                        : item.title || 'Professional Training'));
+                    card.appendChild(heading);
+                    if (item.provider || item.date) {
+                        card.appendChild(makeElement('p', 'training-provider', [item.provider, item.date].filter(Boolean).join(' · ')));
+                    }
+                    if (item.description) {
+                        card.appendChild(makeElement('p', '', isSeedTraining
+                            ? translations[currentLang]?.sqlDesc || item.description
+                            : item.description));
+                    }
+
+                    const trainingSkillKeys = {
+                        'SQL Basics': 'sqlBasics',
+                        'Advanced SQL Queries': 'advancedSQL',
+                        'Database Design': 'databaseDesign',
+                        'SQL Server Administration': 'sqlServerAdmin',
+                        'Stored Procedures & Functions': 'storedProcedures',
+                        'Performance Tuning': 'performanceTuning',
+                        'Data Security': 'dataSecurity',
+                    };
+                    const skills = (item.skills || '').split(',').map((skill) => skill.trim()).filter(Boolean);
+                    if (skills.length) {
+                        const skillList = makeElement('div', 'sql-skills stagger-animation');
+                        skills.forEach((skill) => skillList.appendChild(makeElement(
+                            'div',
+                            'sql-skill',
+                            isSeedTraining && trainingSkillKeys[skill]
+                                ? translations[currentLang]?.[trainingSkillKeys[skill]] || skill
+                                : skill,
+                        )));
+                        card.appendChild(skillList);
+                    }
+
+                    const documents = Array.isArray(item.documents)
+                        ? item.documents.filter((documentEntry) => safeUrl(documentEntry.url || documentEntry.image_url))
+                        : [];
+                    const relatedCertificate = certificates.find((certificate) =>
+                        (certificate.title || '').toLowerCase().includes((item.title || '').toLowerCase())
+                        || (item.title || '').toLowerCase().includes((certificate.title || '').toLowerCase())
+                    );
+                    if (documents.length || relatedCertificate?.image_url) {
+                        const button = makeElement('button', 'view-cert-btn', translations[currentLang]?.viewCertificate || 'View Certificate');
+                        button.addEventListener('click', () => openManagedCertificate(documents.length
+                            ? { title: item.title, image_url: documents[0].url, documents }
+                            : relatedCertificate));
+                        card.appendChild(button);
+                    }
+                    container.appendChild(card);
+                });
+            }
+
+            function renderHobbies(items) {
+                const container = document.querySelector('#hobbies .hobbies-container');
+                if (!container || !Array.isArray(items)) return;
+                container.replaceChildren();
+                const allowedIcons = new Set([
+                    'fas fa-swimmer', 'fas fa-futbol', 'fas fa-book-reader', 'fas fa-users',
+                    'fas fa-hands-helping', 'fas fa-handshake', 'fas fa-music', 'fas fa-camera',
+                    'fas fa-plane', 'fas fa-laptop-code',
+                ]);
+                items.forEach((item) => {
+                    const card = makeElement('div', 'hobby-item');
+                    const iconClass = allowedIcons.has(item.icon) ? item.icon : 'fas fa-heart';
+                    card.appendChild(makeElement('i', iconClass));
+                    const hobbyTranslationKeys = {
+                        swimming: 'swimming',
+                        football: 'football',
+                        reading: 'reading',
+                        'team work': 'teamwork',
+                        counselling: 'counselling',
+                        cooperative: 'cooperative',
+                    };
+                    const hobbyKey = hobbyTranslationKeys[(item.name || '').toLowerCase()];
+                    card.appendChild(makeElement('h4', '', hobbyKey ? translations[currentLang]?.[hobbyKey] || item.name : item.name));
+                    container.appendChild(card);
+                });
+            }
+
+            function renderReferees(items) {
+                const grid = document.querySelector('#referees .projects-grid');
+                if (!grid || !Array.isArray(items)) return;
+                grid.replaceChildren();
+
+                items.forEach((referee) => {
+                    const card = makeElement('div', 'referee-card');
+                    card.appendChild(makeElement('h3', '', referee.name));
+
+                    const positionKeys = {
+                        'senior instructor': 'seniorInstructor',
+                        teacher: 'teacher',
+                        'manager digital banking & innovation': 'managerDigital',
+                    };
+                    const organizationKeys = {
+                        'ministry of education and vocational training': 'ministryEducation',
+                    };
+                    const positionKey = positionKeys[(referee.position || '').toLowerCase()];
+                    card.appendChild(makeElement('p', 'company', positionKey
+                        ? translations[currentLang]?.[positionKey] || referee.position
+                        : referee.position));
+                    if (referee.organization) {
+                        const organizationKey = organizationKeys[referee.organization.toLowerCase()];
+                        card.appendChild(makeElement('p', '', organizationKey
+                            ? translations[currentLang]?.[organizationKey] || referee.organization
+                            : referee.organization));
+                    }
+
+                    [
+                        { icon: 'fas fa-phone', value: referee.phone },
+                        { icon: 'fas fa-envelope', value: referee.email },
+                        { icon: 'fas fa-map-marker-alt', value: referee.address },
+                    ].forEach(({ icon, value }) => {
+                        if (!value) return;
+                        const detail = makeElement('div', 'contact-item-detail');
+                        detail.style.cssText = 'padding: 0; margin: 15px 0; box-shadow: none;';
+                        detail.appendChild(makeElement('i', icon));
+                        detail.appendChild(makeElement('div', '', value));
+                        card.appendChild(detail);
+                    });
+                    grid.appendChild(card);
+                });
+            }
+
+            let activeCvData = null;
+            function renderDynamicSections(data) {
+                if (!data) return;
+                renderTimeline('education', data.education, (item) => item.qualification, (item) => item.institution, data.certificates);
+                renderTimeline('experience', data.experience, (item) => item.role, (item) => item.organization, data.certificates);
+                renderSkills(data.skills);
+                renderAchievements(data.achievements, data.certificates);
+                renderCertificates(data.certificates);
+                renderGallery(data.gallery);
+                renderTraining(data.training, data.certificates);
+                renderHobbies(data.hobbies);
+                renderReferees(data.referees);
+            }
+
+            window.addEventListener('cv-language-changed', () => renderDynamicSections(activeCvData));
+
+            function applyProfile(profile) {
+                if (!profile) return;
+                if (['en', 'sw', 'ar'].includes(profile.language) && profile.language !== currentLang) {
+                    window.setCvLanguage(profile.language);
+                }
+                if (typeof profile.dark_mode === 'boolean' && profile.dark_mode !== body.classList.contains('dark-mode')) {
+                    window.setCvTheme(profile.dark_mode);
+                }
+                setText('[data-i18n="name"]', profile.name);
+                setText('[data-i18n="title"]', profile.title);
+                setText('[data-i18n="location"]', profile.location);
+                setText('[data-i18n="objective"]', profile.summary);
+
+                if (profile.name) document.title = `${profile.name} - Professional CV`;
+
+                const contacts = document.querySelectorAll('.contact-info .contact-item span');
+                if (profile.email && contacts[0]) contacts[0].textContent = profile.email;
+                if (profile.phone && contacts[1]) contacts[1].textContent = profile.phone;
+
+                const picture = document.getElementById('profile-picture');
+                if (picture) picture.src = safeUrl(profile.photo_url) || '/images/me1.jpg';
+
+                const contactFooterLinks = document.querySelectorAll('footer .footer-section:last-child .footer-links a');
+                if (contactFooterLinks[0] && profile.email) {
+                    contactFooterLinks[0].href = `mailto:${profile.email}`;
+                    contactFooterLinks[0].lastChild.textContent = ` ${profile.email}`;
+                }
+                if (contactFooterLinks[1] && profile.phone) {
+                    contactFooterLinks[1].href = `tel:${profile.phone}`;
+                    contactFooterLinks[1].lastChild.textContent = ` ${profile.phone}`;
+                }
+
+                const socialLinks = document.querySelectorAll('.social-links a');
+                if (socialLinks[0]) {
+                    socialLinks[0].href = safeUrl(profile.linkedin) || '#';
+                    socialLinks[0].hidden = !profile.linkedin;
+                }
+                if (socialLinks[1]) socialLinks[1].href = safeUrl(profile.github) || '#';
+                if (socialLinks[3] && profile.email) socialLinks[3].href = `mailto:${profile.email}`;
+
+                const footerDescription = document.querySelector('[data-footer-description]');
+                if (footerDescription && profile.footer_description) {
+                    footerDescription.textContent = profile.footer_description;
+                }
+
+                const footerLinks = document.querySelector('[data-footer-links]');
+                if (footerLinks && Array.isArray(profile.footer_links)) {
+                    footerLinks.replaceChildren();
+                    profile.footer_links.forEach((item) => {
+                        const url = safeFooterUrl(item.href);
+                        if (!url || !item.label) return;
+                        const link = makeElement('a');
+                        link.href = url;
+                        link.title = item.label;
+                        link.setAttribute('aria-label', item.label);
+                        if (url.startsWith('http:') || url.startsWith('https:')) {
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
+                        }
+                        const icon = makeElement('i', /^(fab|fas|far) fa-[a-z0-9-]+$/.test(item.icon || '') ? item.icon : 'fas fa-link');
+                        icon.setAttribute('aria-hidden', 'true');
+                        link.appendChild(icon);
+                        footerLinks.appendChild(link);
+                    });
+                    footerLinks.hidden = footerLinks.childElementCount === 0;
+                }
+
+                const font = allowedFonts.has(profile.font_family) ? profile.font_family : 'Poppins';
+                const color = /^#[0-9a-f]{6}$/i.test(profile.accent_color || '') ? profile.accent_color : '#2F3C9E';
+                const lightColor = color.toUpperCase() === '#2F3C9E'
+                    ? '#5F76E8'
+                    : `color-mix(in srgb, ${color} 68%, white)`;
+                const darkColor = color.toUpperCase() === '#2F3C9E'
+                    ? '#1E2A78'
+                    : `color-mix(in srgb, ${color} 72%, black)`;
+                const darkModeLightColor = color.toUpperCase() === '#2F3C9E'
+                    ? '#8BA1FF'
+                    : `color-mix(in srgb, ${color} 48%, white)`;
+                let themeStyle = document.getElementById('cv-live-theme');
+                if (!themeStyle) {
+                    themeStyle = makeElement('style');
+                    themeStyle.id = 'cv-live-theme';
+                    document.head.appendChild(themeStyle);
+                }
+                themeStyle.textContent = `
+                    body, body *:not(.section-title):not([class^="fa"]):not([class*=" fa"]) { font-family: "${font}", sans-serif !important; }
+                    .managed-certificate-document { width: 100%; min-height: 65vh; border: 0; background: white; }
+                    .certificate-unavailable { cursor: default; }
+                    body:not(.dark-mode) {
+                        --primary: ${color};
+                        --primary-dark: ${darkColor};
+                        --primary-light: ${lightColor};
+                        --header-bg: linear-gradient(135deg, ${darkColor} 0%, ${color} 100%);
+                    }
+                    body.dark-mode {
+                        --primary: ${lightColor};
+                        --primary-dark: ${color};
+                        --primary-light: ${darkModeLightColor};
+                        --header-bg: linear-gradient(135deg, ${darkColor} 0%, ${color} 100%);
+                    }
+                `;
+            }
+
+            window.addEventListener('message', (event) => {
+                if (event.source !== window.parent || event.origin !== window.location.origin) return;
+                if (event.data?.type !== 'CV_DATA') return;
+
+                const { profile, data } = event.data;
+                applyProfile(profile);
+
+                if (data) {
+                    activeCvData = data;
+                    renderDynamicSections(data);
+                } else activeCvData = null;
+            });
+        })();
+    </script>
+</body>
+</html>
