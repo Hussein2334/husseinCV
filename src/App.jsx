@@ -1,6 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
+import pdfWorkerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { supabase } from './lib/supabase'
 import './App.css'
+
+let cvPdfJsPromise
+window.loadCvPdfJs = () => {
+  if (!cvPdfJsPromise) {
+    cvPdfJsPromise = import('pdfjs-dist').then((pdfjsLib) => {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerSrc
+      return pdfjsLib
+    })
+  }
+  return cvPdfJsPromise
+}
 
 const initialProfile = {
   id: 1,

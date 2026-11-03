@@ -1187,6 +1187,37 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             background: #fff;
+            -webkit-touch-callout: none;
+            user-select: none;
+        }
+
+        .managed-certificate-pdf {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .managed-certificate-pdf canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            -webkit-touch-callout: none;
+            user-select: none;
+        }
+
+        .managed-certificate-status {
+            padding: 24px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .managed-certificate-status.error {
+            color: #b91c1c;
         }
 
         .cert-modal-tabs {
@@ -1225,6 +1256,10 @@
         @media (max-width: 480px) {
             .cert-modal-body img { max-height: 50vh; }
             .certificate-card { padding: 22px 14px; }
+        }
+
+        @media print {
+            .cert-modal-overlay { display: none !important; }
         }
         
         @keyframes fadeIn {
@@ -2894,6 +2929,7 @@
         function openCertModal(certKey, imgIndex) {
             const cert = certificatesData[certKey];
             if (!cert) return;
+            window.closeManagedCertificateViewer?.();
             activeCertKey = certKey;
             const index = imgIndex || 0;
 
@@ -2903,8 +2939,10 @@
             const tabsEl = document.getElementById('cert-modal-tabs');
 
             titleEl.textContent = tr(cert.titleKey, cert.fallbackTitle);
+            imgEl.style.display = '';
             imgEl.src = cert.images[index].src;
             imgEl.alt = tr(cert.titleKey, cert.fallbackTitle);
+            imgEl.draggable = false;
 
             // Build tabs if more than one image (e.g. Award + Transcript)
             tabsEl.innerHTML = '';
@@ -2926,6 +2964,7 @@
         }
 
         function closeCertModal() {
+            window.closeManagedCertificateViewer?.();
             const overlay = document.getElementById('cert-modal-overlay');
             overlay.classList.remove('show');
             document.body.style.overflow = '';
@@ -2935,6 +2974,10 @@
         // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeCertModal();
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p'
+                && document.getElementById('cert-modal-overlay').classList.contains('show')) {
+                e.preventDefault();
+            }
         });
 
         // DOM Elements
@@ -3488,6 +3531,70 @@
                 }
             }
 
+            let activeManagedPdfTask = null;
+            let activeManagedPdfRequest = 0;
+
+            function closeManagedCertificateViewer() {
+                activeManagedPdfRequest += 1;
+                if (activeManagedPdfTask) {
+                    const task = activeManagedPdfTask;
+                    activeManagedPdfTask = null;
+                    task.destroy().catch((error) => console.error('Unable to stop PDF rendering.', error));
+                }
+                document.querySelectorAll('.managed-certificate-pdf').forEach((viewer) => viewer.remove());
+                document.getElementById('cert-modal-image').style.display = '';
+            }
+
+            window.closeManagedCertificateViewer = closeManagedCertificateViewer;
+
+            async function renderManagedPdf(url, viewer, status, requestId) {
+                let task = null;
+                try {
+                    const pdfjs = await window.parent.loadCvPdfJs();
+                    if (!pdfjs) throw new Error('PDF viewer could not be loaded.');
+
+                    task = pdfjs.getDocument({ url });
+                    activeManagedPdfTask = task;
+                    const pdf = await task.promise;
+                    if (requestId !== activeManagedPdfRequest) return;
+
+                    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+                        if (requestId !== activeManagedPdfRequest) return;
+                        const page = await pdf.getPage(pageNumber);
+                        if (requestId !== activeManagedPdfRequest) return;
+
+                        const baseViewport = page.getViewport({ scale: 1 });
+                        const maxWidth = Math.min(viewer.clientWidth || 760, 1200);
+                        const viewport = page.getViewport({
+                            scale: Math.min(1.75, maxWidth / baseViewport.width),
+                        });
+                        const canvas = document.createElement('canvas');
+                        canvas.width = Math.ceil(viewport.width);
+                        canvas.height = Math.ceil(viewport.height);
+                        canvas.draggable = false;
+                        canvas.setAttribute('aria-label', `Page ${pageNumber} of ${pdf.numPages}`);
+                        viewer.appendChild(canvas);
+
+                        await page.render({
+                            canvasContext: canvas.getContext('2d'),
+                            viewport,
+                        }).promise;
+                    }
+
+                    if (requestId === activeManagedPdfRequest) status.remove();
+                } catch (error) {
+                    if (requestId !== activeManagedPdfRequest) return;
+                    console.error('Unable to display PDF document.', error);
+                    status.classList.add('error');
+                    status.textContent = 'This document could not be displayed. Please try again later.';
+                } finally {
+                    if (task && activeManagedPdfTask === task) {
+                        activeManagedPdfTask = null;
+                        await task.destroy().catch((error) => console.error('Unable to close PDF rendering.', error));
+                    }
+                }
+            }
+
             function openManagedCertificate(certificate, documentIndex = 0) {
                 const documents = Array.isArray(certificate.documents) && certificate.documents.length
                     ? certificate.documents
@@ -3496,14 +3603,14 @@
                 const url = safeUrl(selectedDocument.url || selectedDocument.image_url);
                 if (!url) return;
 
+                closeManagedCertificateViewer();
+                activeCertKey = null;
                 const overlay = document.getElementById('cert-modal-overlay');
                 const title = document.getElementById('cert-modal-title');
                 const image = document.getElementById('cert-modal-image');
                 const tabs = document.getElementById('cert-modal-tabs');
                 const body = document.querySelector('.cert-modal-body');
-                const oldDocument = body.querySelector('.managed-certificate-document');
 
-                if (oldDocument) oldDocument.remove();
                 title.textContent = certificate.title || 'Certificate';
                 tabs.replaceChildren();
                 tabs.hidden = documents.length < 2;
@@ -3517,19 +3624,28 @@
 
                 if (url.toLowerCase().split('?')[0].endsWith('.pdf')) {
                     image.style.display = 'none';
-                    const documentFrame = makeElement('iframe', 'managed-certificate-document');
-                    documentFrame.src = url;
-                    documentFrame.title = certificate.title || 'Certificate';
-                    body.appendChild(documentFrame);
+                    const viewer = makeElement('div', 'managed-certificate-pdf');
+                    const status = makeElement('p', 'managed-certificate-status', 'Loading document…');
+                    status.setAttribute('role', 'status');
+                    viewer.appendChild(status);
+                    body.appendChild(viewer);
+                    void renderManagedPdf(url, viewer, status, activeManagedPdfRequest);
                 } else {
                     image.style.display = '';
                     image.src = url;
                     image.alt = certificate.title || 'Certificate';
+                    image.draggable = false;
                 }
 
                 overlay.classList.add('show');
                 document.body.style.overflow = 'hidden';
             }
+
+            document.getElementById('cert-modal-overlay').addEventListener('contextmenu', (event) => {
+                if (event.target instanceof Element && event.target.closest('.cert-modal-body img, .managed-certificate-pdf')) {
+                    event.preventDefault();
+                }
+            });
 
             function renderTimeline(sectionId, items, getTitle, getOrganization, certificates) {
                 const section = document.getElementById(sectionId);
@@ -3949,7 +4065,6 @@
                 }
                 themeStyle.textContent = `
                     body, body *:not(.section-title):not([class^="fa"]):not([class*=" fa"]) { font-family: "${font}", sans-serif !important; }
-                    .managed-certificate-document { width: 100%; min-height: 65vh; border: 0; background: white; }
                     .certificate-unavailable { cursor: default; }
                     body:not(.dark-mode) {
                         --primary: ${color};

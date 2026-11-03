@@ -39,7 +39,7 @@ Njia ya `/admin` inaonyesha ukurasa wa kuingia kwa msimamizi; ruhusa za kuhariri
 
 - **Wasifu:** hariri jina, mawasiliano, maelezo na viungo; pakia picha ya wasifu (JPG, PNG au WebP hadi 10 MB) au urudie picha ya kawaida.
 - **Elimu:** ongeza, hariri au futa taarifa na ambatisha vyeti na transcript tofauti (JPG, PNG, WebP au PDF; hadi 10 MB kwa kila faili).
-- **Uzoefu, ujuzi na mafanikio:** ongeza, hariri au futa taarifa na ambatisha vyeti vingi vya JPG, PNG, WebP au PDF hadi 10 MB kwa kila faili; vinafunguka kwenye CV.
+- **Uzoefu, ujuzi na mafanikio:** ongeza, hariri au futa taarifa na ambatisha vyeti vingi vya JPG, PNG, WebP au PDF hadi 10 MB kwa kila faili; vinafunguka ndani ya CV bila toolbar ya kupakua/kuchapisha.
 - **Professional Training na Hobbies:** simamia kuongeza, kuhariri na kufuta mafunzo na hobbies zinazoonekana kwenye CV.
 - **Referees:** ongeza, hariri au futa majina, nyadhifa, taasisi na mawasiliano ya referees.
 - **Vyeti:** pakia JPG, PNG, WebP au PDF hadi 10 MB kwa kila faili. Unaweza kuchagua kurasa nyingi za cheti kimoja; zitaonekana kama vichupo kwenye dirisha la cheti.
@@ -48,7 +48,7 @@ Njia ya `/admin` inaonyesha ukurasa wa kuingia kwa msimamizi; ruhusa za kuhariri
 - **Muonekano:** chagua lugha ya CV (English, Kiswahili au العربية), Light/Dark mode, fonti na rangi kuu; mabadiliko yanaonekana mara moja kwenye CV baada ya kuhifadhi.
 - **Pakua / Chapisha CV:** tumia print dialog ya kivinjari kuhifadhi CV kama PDF.
 
-RLS inaruhusu umma kusoma CV lakini inaruhusu mabadiliko kwa UUID zilizo kwenye `cv_admins` pekee. Faili za vyeti zina URL za umma kwa sababu zinaonyeshwa kwenye CV; usipakie nyaraka binafsi.
+RLS inaruhusu umma kusoma CV lakini inaruhusu mabadiliko kwa UUID zilizo kwenye `cv_admins` pekee. Viewer ya CV huficha njia ya moja kwa moja ya PDF, menyu ya kubofya kulia, na modal ya cheti kwenye uchapishaji wa kawaida. Hizi ni vizuizi vya UI tu: faili za `cv-assets` zina URL za umma na kivinjari hupokea nakala ya hati ili kuionyesha, kwa hiyo mtumiaji mwenye ujuzi bado anaweza kuipata au kunasa picha ya skrini. Usipakie nyaraka binafsi; kuzuia ufikiaji wa faili kabisa kunahitaji hifadhi binafsi na backend ya uthibitishaji.
 
 ## Amri za maendeleo
 
