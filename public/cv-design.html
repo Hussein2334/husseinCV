@@ -221,11 +221,15 @@
 
         .flag-effect-background {
             position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
+            top: 50%;
+            left: 50%;
+            width: min(86vw, 1000px);
+            max-height: 72vh;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+            opacity: 0.42;
         }
 
         .flag-effect-side {
@@ -3144,6 +3148,8 @@
 
         // Language Switcher
         let currentLang = localStorage.getItem('language') || 'en';
+        let languageCelebrationTimeout;
+        let flagCelebrationHideTimeout;
         setLanguage(currentLang);
         
         // Toggle language dropdown
@@ -3180,6 +3186,10 @@
             // Update current language
             currentLang = lang;
             localStorage.setItem('language', lang);
+            clearTimeout(languageCelebrationTimeout);
+            clearTimeout(flagCelebrationHideTimeout);
+            tanzaniaFlagEffect.style.display = 'none';
+            saudiFlagEffect.style.display = 'none';
             const languageFlags = { en: '/flags/uk.svg', sw: '/flags/tanzania.svg', ar: '/flags/saudi-arabia.svg' };
             document.getElementById('current-language-flag').src = languageFlags[lang] || languageFlags.en;
             
@@ -3192,16 +3202,16 @@
                 currentLanguage.textContent = 'Kiswahili';
                 celebrateButton.classList.remove('arabic-mode');
                 // Trigger Tanzania flag celebration when switching to Swahili
-                setTimeout(() => {
-                    startCelebration('tanzania');
+                languageCelebrationTimeout = setTimeout(() => {
+                    if (currentLang === 'sw') startCelebration('tanzania');
                 }, 500);
             }
             if (lang === 'ar') {
                 currentLanguage.textContent = 'العربية';
                 celebrateButton.classList.add('arabic-mode');
                 // Trigger Saudi Arabia flag celebration when switching to Arabic
-                setTimeout(() => {
-                    startCelebration('saudi');
+                languageCelebrationTimeout = setTimeout(() => {
+                    if (currentLang === 'ar') startCelebration('saudi');
                 }, 500);
             }
             
@@ -3244,6 +3254,10 @@
         // Celebration System
         function startCelebration(type = 'generic') {
             // Clear previous celebrations
+            clearTimeout(languageCelebrationTimeout);
+            clearTimeout(flagCelebrationHideTimeout);
+            tanzaniaFlagEffect.style.display = 'none';
+            saudiFlagEffect.style.display = 'none';
             celebration.innerHTML = '';
             
             if (type === 'tanzania') {
@@ -3271,7 +3285,7 @@
                 playCelebrationSound();
                 
                 // Hide flag effect after animation
-                setTimeout(() => {
+                flagCelebrationHideTimeout = setTimeout(() => {
                     tanzaniaFlagEffect.style.display = 'none';
                 }, 3000);
                 
@@ -3299,7 +3313,7 @@
                 playCelebrationSound('arabic');
                 
                 // Hide flag effect after animation
-                setTimeout(() => {
+                flagCelebrationHideTimeout = setTimeout(() => {
                     saudiFlagEffect.style.display = 'none';
                 }, 3000);
                 
