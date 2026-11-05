@@ -486,11 +486,18 @@ function DesignEditor({ profile, onSave, busy }) {
       <div className="form-grid">
         <label>
           Lugha ya CV
-          <select value={language} onChange={(event) => setLanguage(event.target.value)}>
-            <option value="en">English</option>
-            <option value="sw">Kiswahili</option>
-            <option value="ar">العربية</option>
-          </select>
+          <span className="language-select">
+            <img
+              className="language-select-flag"
+              src={`/flags/${({ en: 'uk', sw: 'tanzania', ar: 'saudi-arabia' }[language] || 'uk')}.svg`}
+              alt=""
+            />
+            <select value={language} onChange={(event) => setLanguage(event.target.value)}>
+              <option value="en">English</option>
+              <option value="sw">Kiswahili</option>
+              <option value="ar">العربية</option>
+            </select>
+          </span>
         </label>
         <label>
           Fonti

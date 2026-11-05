@@ -768,6 +768,21 @@
   box-shadow: 0 0 0 3px #147d751c;
 }
 
+.language-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-select-flag {
+  width: 30px;
+  height: 20px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #0002;
+}
+
 .login-submit {
   width: 100%;
   margin-top: 3px;

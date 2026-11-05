@@ -151,15 +151,29 @@
             font-weight: bold;
             z-index: 10000;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             opacity: 0;
             animation: message-popup 2s ease-in-out forwards;
+        }
+
+        .celebration-message-flag {
+            width: 54px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            flex: 0 0 auto;
         }
 
         .celebration-message.arabic {
             background: linear-gradient(135deg, #006233, #CE1126);
             font-size: 2.2rem;
             font-family: 'Traditional Arabic', 'Scheherazade', serif;
+            direction: rtl;
         }
 
         @keyframes message-popup {
@@ -187,15 +201,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                45deg,
-                #1B5E20 0%,
-                #1B5E20 33%,
-                #FFD600 33%,
-                #FFD600 66%,
-                #000000 66%,
-                #000000 100%
-            );
             z-index: 9998;
             opacity: 0;
             pointer-events: none;
@@ -208,25 +213,47 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #006233;
             z-index: 9998;
             opacity: 0;
             pointer-events: none;
             animation: flag-wave 3s ease-in-out forwards;
         }
 
-        .saudi-flag-effect::before {
-            content: "الله أكبر";
+        .flag-effect-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .flag-effect-side {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 5rem;
-            font-weight: bold;
-            font-family: 'Traditional Arabic', 'Scheherazade', serif;
-            opacity: 0.7;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: clamp(90px, 16vw, 220px);
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.75);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+            animation: flag-side-float 1.4s ease-in-out infinite alternate;
+        }
+
+        .flag-effect-side.left {
+            left: 18px;
+            transform: translateY(-50%) rotate(-7deg);
+        }
+
+        .flag-effect-side.right {
+            right: 18px;
+            transform: translateY(-50%) rotate(7deg);
+        }
+
+        @keyframes flag-side-float {
+            from { margin-top: -10px; }
+            to { margin-top: 10px; }
         }
 
         @keyframes flag-wave {
@@ -235,7 +262,7 @@
                 transform: scale(0.5);
             }
             50% {
-                opacity: 0.3;
+                opacity: 0.72;
                 transform: scale(1);
             }
             100% {
@@ -1316,6 +1343,16 @@
             transition: all 0.3s;
         }
 
+        .language-flag {
+            display: block;
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px #0002;
+            flex: 0 0 auto;
+        }
+
         .language-button:hover {
             background: var(--light);
         }
@@ -1717,8 +1754,16 @@
                 left: 0;
             }
 
-            .saudi-flag-effect::before {
-                font-size: 3rem;
+            .flag-effect-side {
+                width: clamp(70px, 18vw, 110px);
+            }
+
+            .flag-effect-side.left {
+                left: 8px;
+            }
+
+            .flag-effect-side.right {
+                right: 8px;
             }
         }
 
@@ -1763,8 +1808,19 @@
                 transform: scale(0.8);
             }
 
-            .saudi-flag-effect::before {
-                font-size: 2rem;
+            .flag-effect-side {
+                width: 68px;
+            }
+
+            .celebration-message {
+                gap: 9px;
+                padding: 22px 18px;
+                font-size: 1.35rem;
+            }
+
+            .celebration-message-flag {
+                width: 38px;
+                height: 25px;
             }
         }
 
@@ -1854,10 +1910,18 @@
     <div class="celebration" id="celebration"></div>
     
     <!-- Tanzania Flag Effect -->
-    <div class="tanzania-flag-effect" id="tanzania-flag-effect"></div>
+    <div class="tanzania-flag-effect" id="tanzania-flag-effect">
+        <img class="flag-effect-background" src="/flags/tanzania.svg" alt="">
+        <img class="flag-effect-side left" src="/flags/tanzania.svg" alt="">
+        <img class="flag-effect-side right" src="/flags/tanzania.svg" alt="">
+    </div>
     
     <!-- Saudi Arabia Flag Effect -->
-    <div class="saudi-flag-effect" id="saudi-flag-effect"></div>
+    <div class="saudi-flag-effect" id="saudi-flag-effect">
+        <img class="flag-effect-background" src="/flags/saudi-arabia.svg" alt="">
+        <img class="flag-effect-side left" src="/flags/saudi-arabia.svg" alt="">
+        <img class="flag-effect-side right" src="/flags/saudi-arabia.svg" alt="">
+    </div>
     
     <!-- Celebration Button -->
     <button class="celebrate-button" id="celebrate-button">
@@ -1887,20 +1951,20 @@
             <div class="nav-controls">
                 <div class="language-dropdown">
                     <button class="language-button" id="language-button">
-                        <i class="fas fa-globe"></i>
+                        <img class="language-flag" id="current-language-flag" src="/flags/uk.svg" alt="">
                         <span id="current-language">English</span>
                     </button>
                     <div class="language-options" id="language-options">
                         <div class="language-option" data-lang="en">
-                            <i class="fas fa-language"></i>
+                            <img class="language-flag" src="/flags/uk.svg" alt="">
                             English
                         </div>
                         <div class="language-option" data-lang="sw">
-                            <i class="fas fa-language"></i>
+                            <img class="language-flag" src="/flags/tanzania.svg" alt="">
                             Kiswahili
                         </div>
                         <div class="language-option" data-lang="ar">
-                            <i class="fas fa-language"></i>
+                            <img class="language-flag" src="/flags/saudi-arabia.svg" alt="">
                             العربية
                         </div>
                     </div>
@@ -3116,6 +3180,8 @@
             // Update current language
             currentLang = lang;
             localStorage.setItem('language', lang);
+            const languageFlags = { en: '/flags/uk.svg', sw: '/flags/tanzania.svg', ar: '/flags/saudi-arabia.svg' };
+            document.getElementById('current-language-flag').src = languageFlags[lang] || languageFlags.en;
             
             // Update button text
             if (lang === 'en') {
@@ -3199,7 +3265,7 @@
                 }
                 
                 // Show celebration message
-                showMessage('🇹🇿 Uhuru na Umoja! 🇹🇿');
+                showMessage('Uhuru na Umoja!', '', '/flags/tanzania.svg');
                 
                 // Play celebration sound
                 playCelebrationSound();
@@ -3227,7 +3293,7 @@
                 }
                 
                 // Show Arabic celebration message
-                showMessage('🇸🇦 الله أكبر 🇸🇦', 'arabic');
+                showMessage('الله أكبر', 'arabic', '/flags/saudi-arabia.svg');
                 
                 // Play celebration sound
                 playCelebrationSound('arabic');
@@ -3281,10 +3347,22 @@
             return colors[Math.floor(Math.random() * colors.length)];
         }
 
-        function showMessage(text, type = '') {
+        function showMessage(text, type = '', flagSrc = '') {
             const message = document.createElement('div');
             message.className = 'celebration-message' + (type ? ' ' + type : '');
-            message.textContent = text;
+            if (flagSrc) {
+                for (let i = 0; i < 2; i++) {
+                    const flag = document.createElement('img');
+                    flag.className = 'celebration-message-flag';
+                    flag.src = flagSrc;
+                    flag.alt = '';
+                    flag.setAttribute('aria-hidden', 'true');
+                    message.appendChild(flag);
+                }
+            }
+            const label = document.createElement('span');
+            label.textContent = text;
+            message.appendChild(label);
             document.body.appendChild(message);
             
             setTimeout(() => {
